@@ -1,26 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
+  --font-size: 16px;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  --navy: #0f1729;
+  --champagne: #34bce1;
+  --sand: #e8dcc4;
+  --sand-light: #f5f1e8;
+
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f1729;
+  --card: #ffffff;
+  --card-foreground: #0f1729;
+  --popover: #ffffff;
+  --popover-foreground: #0f1729;
+  --primary: #0f1729;
+  --primary-foreground: #ffffff;
+  --secondary: #e8dcc4;
+  --secondary-foreground: #0f1729;
+  --muted: #f5f1e8;
+  --muted-foreground: #5a6376;
+  --accent: #34bce1;
+  --accent-foreground: #0f1729;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(15, 23, 41, 0.1);
+  --input: transparent;
+  --input-background: #f5f1e8;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #34bce1;
+  --radius: 0.25rem;
+  --sidebar: #0f1729;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #34bce1;
+  --sidebar-primary-foreground: #0f1729;
+  --sidebar-accent: #1a2337;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #34bce1;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+
+  html { font-size: var(--font-size); }
+
+  h1 { font-family: var(--font-serif); font-size: var(--text-2xl); font-weight: var(--font-weight-medium); line-height: 1.5; }
+  h2 { font-family: var(--font-serif); font-size: var(--text-xl); font-weight: var(--font-weight-medium); line-height: 1.5; }
+  h3 { font-family: var(--font-serif); font-size: var(--text-lg); font-weight: var(--font-weight-medium); line-height: 1.5; }
+  h4 { font-family: var(--font-serif); font-size: var(--text-base); font-weight: var(--font-weight-medium); line-height: 1.5; }
+  label { font-size: var(--text-base); font-weight: var(--font-weight-medium); line-height: 1.5; }
+  button { font-size: var(--text-base); font-weight: var(--font-weight-medium); line-height: 1.5; }
+  input { font-size: var(--text-base); font-weight: var(--font-weight-normal); line-height: 1.5; }
+
+  .rdp {
+    --rdp-accent-color: var(--champagne);
+    --rdp-background-color: var(--sand-light);
+    margin: 0;
+  }
+  .rdp-months { display: flex; gap: 1rem; }
+  .rdp-month { width: 100%; }
+  .rdp-caption { display: flex; justify-content: center; align-items: center; margin-bottom: 1rem; }
+  .rdp-caption_label { font-family: var(--font-serif); font-size: 1.125rem; color: var(--navy); }
+  .rdp-nav { position: absolute; right: 0; display: flex; gap: 0.5rem; }
+  .rdp-nav_button { width: 2rem; height: 2rem; border-radius: 0; border: 1px solid var(--sand); background: white; color: var(--navy); cursor: pointer; transition: all 0.2s; }
+  .rdp-nav_button:hover { border-color: var(--champagne); color: var(--champagne); }
+  .rdp-table { width: 100%; border-collapse: collapse; }
+  .rdp-head_cell { color: var(--navy); opacity: 0.6; font-size: 0.875rem; padding: 0.5rem; text-align: center; }
+  .rdp-cell { padding: 0.25rem; }
+  .rdp-day { width: 2.5rem; height: 2.5rem; border: 1px solid transparent; background: transparent; color: var(--navy); cursor: pointer; transition: all 0.2s; font-size: 0.875rem; }
+  .rdp-day:hover:not([disabled]):not(.rdp-day_selected) { background-color: var(--sand); border-color: var(--sand); }
+  .rdp-day_selected { background-color: var(--champagne) !important; color: var(--navy) !important; border-color: var(--champagne) !important; }
+  .rdp-day_today { font-weight: 600; color: var(--champagne); }
+  .rdp-day_outside { opacity: 0.3; }
+  .rdp-day_disabled { opacity: 0.3; cursor: not-allowed; }
+  .rdp-day_range_middle { background-color: var(--sand-light); }
 }

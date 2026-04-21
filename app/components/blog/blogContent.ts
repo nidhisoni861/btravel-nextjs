@@ -1,0 +1,70 @@
+export const blogFullContent: Record<number, { sections: Array<{ type: string; [key: string]: unknown }> }> = {
+  1: {
+    sections: [
+      { type: 'text', content: 'Die Malediven sind bekannt für ihre türkisfarbenen Lagunen und puderweißen Strände, doch fernab der bekannten Resorts verbergen sich wahre Juwelen. Diese exklusiven Privatinseln bieten nicht nur absolute Privatsphäre, sondern auch einzigartige Erlebnisse, die man nirgendwo sonst findet.' },
+      { type: 'image', url: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200', caption: 'Crystal-clear water and endless beaches in the Maldives' },
+      { type: 'text', content: 'Auf unserer exklusiven Reise haben wir einige der luxuriösesten Resorts besucht, die jeweils auf ihrer eigenen Privatinsel liegen. Jede Villa verfügt über einen direkten Zugang zum kristallklaren Meer und einen privaten Butler-Service rund um die Uhr.' },
+      { type: 'text', content: 'Das Highlight unserer Reise war zweifellos das Tauchen mit Walhaien bei Sonnenaufgang. In Begleitung eines privaten Meeresbiologen konnten wir diese majestätischen Kreaturen in ihrer natürlichen Umgebung beobachten - ein unvergessliches Erlebnis.' },
+      { type: 'gallery', images: ['https://images.unsplash.com/photo-1559827260-dc66d52bef19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800', 'https://images.unsplash.com/photo-1582719508461-905c673771fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800'] },
+      { type: 'text', content: 'Die kulinarischen Highlights reichten von privaten Dinner-Events auf einer unbewohnten Sandbank bis hin zu Michelin-Stern würdigen Menüs, die von international renommierten Chefs zubereitet wurden.' },
+      { type: 'image', url: 'https://images.unsplash.com/photo-1615880484746-a134be9a6ecf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200', caption: 'Luxurious dining experience on the beach' },
+      { type: 'text', content: 'Für Wellness-Enthusiasten bieten die Over-Water Spas absolute Entspannung. Mit Blick auf den endlosen Ozean werden hier traditionelle maledivische Behandlungen mit modernen Wellness-Konzepten kombiniert.' },
+    ],
+  },
+  2: {
+    sections: [
+      { type: 'text', content: 'Japan ist ein Paradies für Feinschmecker. Von den geschäftigen Straßen Tokios bis zu den ruhigen Tempeln Kyotos bietet jede Region ihre eigenen kulinarischen Schätze.' },
+      { type: 'image', url: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200', caption: 'Traditional Japanese Omakase menu' },
+      { type: 'text', content: 'Unsere Reise begann in Tokio, wo wir das Privileg hatten, in einem exklusiven Drei-Sterne-Michelin-Restaurant zu speisen. Chefkoch Tanaka-san kreierte vor unseren Augen ein 18-gängiges Omakase-Menü.' },
+      { type: 'text', content: 'Doch die wahre Magie liegt in den versteckten Izakayas - kleinen, familiengeführten Lokalen, die nur Einheimische kennen. Mit einem privaten Food-Guide entdeckten wir authentische Yakitori-Bars.' },
+      { type: 'gallery', images: ['https://images.unsplash.com/photo-1528164344705-47542687000d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800', 'https://images.unsplash.com/photo-1613929446475-a46e0d6b94b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800'] },
+      { type: 'text', content: 'In Kyoto lernten wir in einer privaten Sake-Brauerei die Kunst der Sake-Herstellung kennen. Der Braumeister teilte jahrhundertealte Geheimnisse und ließ uns seltene Vintages probieren.' },
+      { type: 'text', content: 'Den Abschluss bildete ein privates Kaiseki-Dinner in einem traditionellen Ryokan - ein Erlebnis, das die japanische Philosophie des Ichi-go Ichi-e zelebrierte.' },
+    ],
+  },
+  3: {
+    sections: [
+      { type: 'text', content: 'Die Serengeti in Tansania ist Heimat eines der spektakulärsten Naturschauspiele der Welt: der Großen Tierwanderung. Millionen von Gnus, Zebras und Gazellen ziehen durch die endlosen Ebenen.' },
+      { type: 'image', url: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200', caption: 'The Great Migration in the Serengeti' },
+      { type: 'text', content: 'Unser privates Camp lag strategisch perfekt, um die Wanderung aus nächster Nähe zu erleben. Jedes Zelt war ein luxuriöses Refugium mit eigenem Plunge Pool und Panoramablick auf die Savanne.' },
+      { type: 'text', content: 'Die Pirschfahrten wurden von erfahrenen Rangern geleitet. Bei Sonnenaufgang beobachteten wir eine Löwenfamilie bei der Jagd, am Nachmittag spielten Elefanten am Wasserloch direkt vor unserem Zelt.' },
+      { type: 'gallery', images: ['https://images.unsplash.com/photo-1549366021-9f761d450615?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800', 'https://images.unsplash.com/photo-1535338788278-27ae04e98d1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800'] },
+      { type: 'text', content: 'Ein besonderes Highlight war der Helikopterflug über die Serengeti. Aus der Vogelperspektive bot sich ein atemberaubender Anblick: die schiere Masse der wandernden Tiere.' },
+      { type: 'image', url: 'https://images.unsplash.com/photo-1534177616072-ef7dc120449d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200', caption: 'Luxury safari camp at sunset' },
+      { type: 'text', content: 'Abends saßen wir am Lagerfeuer unter dem afrikanischen Sternenhimmel und genossen ein exquisites Bush-Dinner mit lokalen Zutaten.' },
+    ],
+  },
+  4: {
+    sections: [
+      { type: 'text', content: 'Begeben Sie sich auf eine unvergessliche 7-tägige Mittelmeer-Kreuzfahrt, die Sie zu den faszinierendsten Häfen und verborgenen Juwelen dieser historischen Region führt.' },
+      { type: 'image', url: 'https://images.unsplash.com/photo-1548574505-5e239809ee19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200', caption: 'Luxury cruise ship in the Mediterranean' },
+      { type: 'text', content: 'Diese sorgfältig kuratierte Route kombiniert weltberühmte Destinationen mit versteckten Perlen und bietet Ihnen die perfekte Balance zwischen Erkundung und Entspannung.' },
+      { type: 'route', stops: [
+        { day: 1, port: 'Barcelona, Spain', highlights: ['Boarding in the afternoon', 'Welcome dinner in the panorama restaurant', 'Departure at sunset'] },
+        { day: 2, port: 'Nice, France', highlights: ['Visit the Promenade des Anglais', 'Exclusive old town tour', 'Private wine tasting at a local château'] },
+        { day: 3, port: 'Portofino, Italy', highlights: ['Stroll through the picturesque fishing village', 'Lunch at a Michelin-star restaurant', 'Private yacht tour along the Italian Riviera'] },
+        { day: 4, port: 'Rome (Civitavecchia), Italy', highlights: ['Full-day VIP tour of Rome', 'Private guided tour of the Colosseum', 'Vatican audience (subject to availability)'] },
+        { day: 5, port: 'Capri, Italy', highlights: ['Visit the famous Blue Grotto', 'Shopping on Via Camerelle', 'Sundowner on the Hotel Quisisana terrace'] },
+        { day: 6, port: 'Dubrovnik, Croatia', highlights: ['City walk on the medieval city walls', 'Game of Thrones filming locations tour', 'Dinner at a sea-view restaurant'] },
+        { day: 7, port: 'Venice, Italy', highlights: ['Arrive early morning', 'Private gondola ride through the canals', 'Disembarkation'] },
+      ]},
+      { type: 'text', content: 'An Bord erwarten Sie zahlreiche Annehmlichkeiten: mehrere Gourmet-Restaurants, ein luxuriöses Spa und tägliche Entertainment-Programme.' },
+      { type: 'gallery', images: ['https://images.unsplash.com/photo-1575109807020-7179562c4a27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800', 'https://images.unsplash.com/photo-1688269910705-2d2a9d943a95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800'] },
+      { type: 'text', content: 'Unser Concierge-Team steht Ihnen rund um die Uhr zur Verfügung, um jeden Ihrer Wünsche zu erfüllen.' },
+      { type: 'image', url: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200', caption: 'Luxury suite with sea view' },
+    ],
+  },
+  5: {
+    sections: [
+      { type: 'text', content: 'Entdecken Sie die unberührte Wildnis Alaskas auf dieser außergewöhnlichen 7-Nächte-Kreuzfahrt. Von Vancouver bis zu den majestätischen Gletschern und einsamen Buchten.' },
+      { type: 'routeMap', title: 'EINE REISE DURCH BERUHIGENDE GEWÄSSER UND ZU ZEITLOSEN NATURWUNDERN', subtitle: '7 Nächte ab Vancouver bis Seward', routePoints: ['Vancouver', 'Wrangell', 'Icy Strait Point', 'Hubbard Glacier (Passage)', 'Valdez', 'Kodiak Island', 'Seward'], duration: 'Friday 30 July 2027 – Friday 6 Aug. 2027 (7 nights)', price: 'from €5,385*', priceNote: '* Early booking rate when booked up to one year in advance' },
+      { type: 'image', url: 'https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200', caption: 'Hubbard Glacier - one of the most active glaciers in Alaska' },
+      { type: 'text', content: 'Die Reise beginnt in Vancouver. Von hier aus führt Sie die Route entlang der malerischen Inside Passage, vorbei an dichten Regenwäldern und imposanten Berggipfeln.' },
+      { type: 'text', content: 'In Wrangell erwartet Sie eine authentische Alaska-Erfahrung. Bei Icy Strait Point haben Sie die Möglichkeit, Buckelwale in ihrer natürlichen Umgebung zu beobachten.' },
+      { type: 'gallery', images: ['https://images.unsplash.com/photo-1679129429152-cdc310daac38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800', 'https://images.unsplash.com/photo-1594305851146-074dbb721aa1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800'] },
+      { type: 'text', content: 'Der absolute Höhepunkt der Reise ist die Passage am Hubbard Gletscher. Beobachten Sie, wie riesige Eisblöcke ins Meer kalben - ein unvergessliches Naturschauspiel.' },
+      { type: 'image', url: 'https://images.unsplash.com/photo-1551244072-5d12893278ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200', caption: 'Humpback whales in Alaskan waters' },
+      { type: 'text', content: 'An Bord genießen Sie erstklassigen Komfort mit Ocean Terrace Suiten, die alle über einen privaten Balkon verfügen.' },
+    ],
+  },
+};

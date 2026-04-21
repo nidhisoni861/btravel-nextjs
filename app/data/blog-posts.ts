@@ -1,0 +1,42 @@
+export const blogPosts = [
+  {
+    id: 1,
+    title: "Die verborgenen Schätze der Malediven",
+    excerpt: "Entdecken Sie die exklusivsten Privatinseln und unvergessliche Unterwassererlebnisse.",
+    image: "https://images.unsplash.com/photo-1762961881563-66852e1e4527?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw1fHxsdXh1cnklMjB0cmF2ZWwlMjBleG90aWMlMjBkZXN0aW5hdGlvbiUyMGVkaXRvcmlhbHxlbnwxfHx8fDE3NzU3MzcwMjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    date: "15. März 2026",
+    author: "Marina Schmidt",
+  },
+  {
+    id: 2,
+    title: "Kulinarische Reise durch Japan",
+    excerpt: "Von Michelin-Sternen bis zu versteckten Izakayas - erleben Sie die authentische japanische Küche.",
+    image: "https://images.unsplash.com/photo-1753898464732-85e0f3df8a53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjB0cmF2ZWwlMjBleG90aWMlMjBkZXN0aW5hdGlvbiUyMGVkaXRvcmlhbHxlbnwxfHx8fDE3NzU3MzcwMjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    date: "8. März 2026",
+    author: "Thomas Weber",
+  },
+  {
+    id: 3,
+    title: "Safari-Luxus in Tansania",
+    excerpt: "Erleben Sie die Große Tierwanderung in privaten Camps mit erstklassigem Service.",
+    image: "https://images.unsplash.com/photo-1753898465083-a6830cd77c88?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjB0cmF2ZWwlMjBleG90aWMlMjBkZXN0aW5hdGlvbiUyMGVkaXRvcmlhbHxlbnwxfHx8fDE3NzU3MzcwMjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    date: "1. März 2026",
+    author: "Sarah Hoffmann",
+  },
+  {
+    id: 4,
+    title: "Mittelmeer-Kreuzfahrt: 7 Days Luxus auf See",
+    excerpt: "Eine exklusive Reise durch die schönsten Häfen des Mittelmeers mit erstklassigem Service an Bord.",
+    image: "https://images.unsplash.com/photo-1722914873924-cf64eafb6175?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcnVpc2UlMjBzaGlwJTIwb2NlYW4lMjBzdW5zZXR8ZW58MXx8fHwxNzc1ODA2MTIyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    date: "20. März 2026",
+    author: "Alexander Klein",
+  },
+  {
+    id: 5,
+    title: "Alaska-Kreuzfahrt: Gletscher & Naturwunder",
+    excerpt: "Eine Reise durch beruhigende Gewässer und zu zeitlosen Naturwundern - 7 Nights ab Vancouver.",
+    image: "https://images.unsplash.com/photo-1605978221138-0be1cae9204b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbGFza2ElMjBjcnVpc2UlMjBnbGFjaWVyfGVufDF8fHx8MTc3NTgwNjI3OXww&ixlib=rb-4.1.0&q=80&w=1080",
+    date: "25. März 2026",
+    author: "Alexander Klein",
+  },
+];
