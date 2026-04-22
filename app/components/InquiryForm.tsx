@@ -45,14 +45,14 @@ export default function InquiryForm() {
 
   return (
     <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.4 }}
-      className="bg-white/95 backdrop-blur-sm p-12 shadow-2xl">
-      <div className="flex items-center justify-between mb-12">
+      className="bg-white/95 backdrop-blur-sm p-5 sm:p-8 md:p-12 shadow-lg sm:shadow-2xl">
+      <div className="flex items-center justify-between mb-6 sm:mb-12">
         {[1, 2, 3, 4, 5].map((step) => (
-          <div key={step} className="flex items-center flex-1">
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${currentStep >= step ? 'bg-[var(--champagne)] text-[var(--navy)]' : 'bg-[var(--sand)] text-[var(--navy)]/40'}`}>
+          <div key={step} className="flex items-center flex-1 min-w-0">
+            <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center flex-shrink-0 text-sm sm:text-base transition-all ${currentStep >= step ? 'bg-[var(--champagne)] text-[var(--navy)]' : 'bg-[var(--sand)] text-[var(--navy)]/40'}`}>
               {step}
             </div>
-            {step < 5 && <div className={`flex-1 h-0.5 mx-2 transition-all ${currentStep > step ? 'bg-[var(--champagne)]' : 'bg-[var(--sand)]'}`} />}
+            {step < 5 && <div className={`flex-1 h-0.5 mx-1 sm:mx-2 transition-all ${currentStep > step ? 'bg-[var(--champagne)]' : 'bg-[var(--sand)]'}`} />}
           </div>
         ))}
       </div>

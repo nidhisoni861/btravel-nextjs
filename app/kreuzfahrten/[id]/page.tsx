@@ -29,25 +29,25 @@ export default function KreuzfahrtDetailPage() {
         <img src={cruise.image} alt={cruise.title} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
         <button onClick={() => router.push('/kreuzfahrten')}
-          className="absolute top-32 left-8 flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm text-[var(--navy)] hover:bg-white transition-colors">
+          className="absolute top-20 sm:top-32 left-4 sm:left-8 flex items-center gap-2 px-3 sm:px-4 py-2 bg-white/90 backdrop-blur-sm text-[var(--navy)] hover:bg-white transition-colors z-10">
           <ArrowLeft className="w-5 h-5" /><span>Back</span>
         </button>
-        <div className="absolute bottom-0 left-0 right-0 p-12 text-white">
+        <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-12 text-white">
           <div className="max-w-[1400px] mx-auto">
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
-              className="font-serif text-5xl md:text-6xl mb-4">{cruise.title}</motion.h1>
+              className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 sm:mb-4">{cruise.title}</motion.h1>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-wrap items-center gap-6 text-lg">
-              <span className="flex items-center gap-2"><MapPin className="w-5 h-5" />{cruise.destination}</span>
-              <span className="flex items-center gap-2"><Calendar className="w-5 h-5" />{cruise.duration}</span>
-              <span className="flex items-center gap-2"><Users className="w-5 h-5" />{cruise.passengers}</span>
+              className="flex flex-wrap items-center gap-3 sm:gap-6 text-sm sm:text-lg">
+              <span className="flex items-center gap-2"><MapPin className="w-4 h-4 sm:w-5 sm:h-5" />{cruise.destination}</span>
+              <span className="flex items-center gap-2"><Calendar className="w-4 h-4 sm:w-5 sm:h-5" />{cruise.duration}</span>
+              <span className="flex items-center gap-2"><Users className="w-4 h-4 sm:w-5 sm:h-5" />{cruise.passengers}</span>
             </motion.div>
           </div>
         </div>
       </motion.div>
 
-      <div className="max-w-[1400px] mx-auto px-8 py-16">
-        <div className="grid lg:grid-cols-3 gap-12">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 py-8 sm:py-16">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-12">
           <CruiseDetailContent
             description={cruise.description}
             highlights={cruise.highlights}

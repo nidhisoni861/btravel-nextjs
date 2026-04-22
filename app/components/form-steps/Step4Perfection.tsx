@@ -45,8 +45,8 @@ export default function Step4Perfection({ formData, updateFormData, nextStep, pr
 
   return (
     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }}>
-      <h2 className="font-serif text-3xl text-[var(--navy)] mb-3">What makes this trip perfect for you?</h2>
-      <p className="text-[var(--navy)]/60 mb-10">Select your desired extras</p>
+      <h2 className="font-serif text-2xl sm:text-3xl text-[var(--navy)] mb-3">What makes this trip perfect for you?</h2>
+      <p className="text-[var(--navy)]/60 mb-6 sm:mb-10">Select your desired extras</p>
       <div className="space-y-8">
         <LuxuryOptionGroup title="Service Level" options={luxuryOptions.serviceLevel} formData={formData} onToggle={handleToggle} />
         <LuxuryOptionGroup title="Culinary" options={luxuryOptions.kulinarik} formData={formData} onToggle={handleToggle} />

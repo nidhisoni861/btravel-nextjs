@@ -11,7 +11,7 @@ export default function CruiseDetailSidebar({ price, date, duration }: Props) {
 
   return (
     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="lg:col-span-1">
-      <div className="sticky top-32 bg-white border-2 border-[var(--sand)] p-8">
+      <div className="sticky top-32 bg-white border-2 border-[var(--sand)] p-5 sm:p-8">
         <div className="mb-6">
           <p className="text-sm text-[var(--navy)]/60 mb-2">From</p>
           <p className="font-serif text-4xl text-[var(--navy)] mb-1">€ {price.toLocaleString()}</p>

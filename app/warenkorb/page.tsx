@@ -35,34 +35,40 @@ export default function WarenkorbPage() {
 
   return (
     <div className="min-h-screen bg-white pt-32">
-      <div className="max-w-[1200px] mx-auto px-8 py-16">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-16">
-          <div className="flex items-center gap-4 mb-4">
-            <ShoppingCart className="w-10 h-10 text-[var(--champagne)]" />
-            <h1 className="font-serif text-5xl text-[var(--navy)]">Cart</h1>
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-8 py-8 sm:py-16">
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-8 sm:mb-16">
+          <div className="flex items-center gap-3 sm:gap-4 mb-4">
+            <ShoppingCart className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--champagne)]" />
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[var(--navy)]">Cart</h1>
           </div>
-          <p className="text-[var(--navy)]/70 text-lg">{cartItems.length} {cartItems.length === 1 ? 'trip' : 'trips'} in your cart</p>
+          <p className="text-[var(--navy)]/70 text-base sm:text-lg">{cartItems.length} {cartItems.length === 1 ? 'trip' : 'trips'} in your cart</p>
         </motion.div>
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-12">
           <div className="lg:col-span-2 space-y-6">
             {cartItems.map((item, index) => (
               <motion.div key={item.id} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex gap-6 bg-white border-2 border-[var(--sand)] p-6 hover:border-[var(--champagne)] transition-all">
-                <img src={item.image} alt={item.title} className="w-48 h-32 object-cover" />
-                <div className="flex-1">
-                  <h3 className="font-serif text-xl text-[var(--navy)] mb-2">{item.title}</h3>
+                className="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-white border-2 border-[var(--sand)] p-4 sm:p-6 hover:border-[var(--champagne)] transition-all">
+                <img src={item.image} alt={item.title} className="w-full sm:w-48 h-48 sm:h-32 object-cover flex-shrink-0" />
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-serif text-lg sm:text-xl text-[var(--navy)] mb-2">{item.title}</h3>
                   <p className="text-[var(--navy)]/70 text-sm mb-1">{item.destination}</p>
                   <p className="text-[var(--navy)]/70 text-sm mb-4">{item.duration}</p>
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center justify-between sm:justify-start gap-4">
                     <div className="flex items-center gap-3 border-2 border-[var(--sand)]">
                       <button onClick={() => updateQuantity(item.id, -1)} className="p-2 hover:bg-[var(--sand)] transition-colors"><Minus className="w-4 h-4 text-[var(--navy)]" /></button>
                       <span className="text-[var(--navy)] font-medium min-w-[2rem] text-center">{item.quantity}</span>
                       <button onClick={() => updateQuantity(item.id, 1)} className="p-2 hover:bg-[var(--sand)] transition-colors"><Plus className="w-4 h-4 text-[var(--navy)]" /></button>
                     </div>
-                    <button onClick={() => removeItem(item.id)} className="p-2 text-red-500 hover:bg-red-50 transition-colors"><Trash2 className="w-5 h-5" /></button>
+                    <div className="flex items-center gap-2">
+                      <div className="sm:hidden text-right">
+                        <p className="font-serif text-xl text-[var(--navy)]">€ {(item.price * item.quantity).toLocaleString()}</p>
+                        <p className="text-xs text-[var(--navy)]/60">€ {item.price.toLocaleString()} × {item.quantity}</p>
+                      </div>
+                      <button onClick={() => removeItem(item.id)} className="p-2 text-red-500 hover:bg-red-50 transition-colors"><Trash2 className="w-5 h-5" /></button>
+                    </div>
                   </div>
                 </div>
-                <div className="text-right">
+                <div className="hidden sm:block text-right flex-shrink-0">
                   <p className="font-serif text-2xl text-[var(--navy)]">€ {(item.price * item.quantity).toLocaleString()}</p>
                   <p className="text-sm text-[var(--navy)]/60">€ {item.price.toLocaleString()} × {item.quantity}</p>
                 </div>
@@ -70,7 +76,7 @@ export default function WarenkorbPage() {
             ))}
           </div>
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="lg:col-span-1">
-            <div className="bg-[var(--sand-light)] border-2 border-[var(--sand)] p-8 sticky top-32">
+            <div className="bg-[var(--sand-light)] border-2 border-[var(--sand)] p-5 sm:p-8 sticky top-32">
               <h2 className="font-serif text-2xl text-[var(--navy)] mb-6">Summary</h2>
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between text-[var(--navy)]"><span>Subtotal</span><span>€ {subtotal.toLocaleString()}</span></div>

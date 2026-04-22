@@ -24,16 +24,16 @@ export default function TerminBuchenPage() {
 
   return (
     <div className="min-h-screen bg-white pt-32">
-      <div className="max-w-[900px] mx-auto px-8 py-16">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center mb-16">
-          <h1 className="font-serif text-5xl text-[var(--navy)] mb-4">Book Consultation</h1>
-          <p className="text-[var(--navy)]/70 text-lg">Let our travel experts advise you personally</p>
+      <div className="max-w-[900px] mx-auto px-4 sm:px-8 py-8 sm:py-16">
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center mb-8 sm:mb-16">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[var(--navy)] mb-4">Book Consultation</h1>
+          <p className="text-[var(--navy)]/70 text-base sm:text-lg">Let our travel experts advise you personally</p>
         </motion.div>
         <motion.form initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
-          onSubmit={handleSubmit} className="bg-white border-2 border-[var(--sand)] p-10">
-          <div className="mb-10">
+          onSubmit={handleSubmit} className="bg-white border-2 border-[var(--sand)] p-5 sm:p-8 md:p-10">
+          <div className="mb-8 sm:mb-10">
             <label className="block text-[var(--navy)] font-medium mb-4">How would you like to be consulted?</label>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
               {consultationTypes.map((type) => {
                 const Icon = type.icon;
                 return (
@@ -62,7 +62,7 @@ export default function TerminBuchenPage() {
               ))}
             </div>
           </div>
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
             <div>
               <label className="block text-[var(--navy)] font-medium mb-2">Your Name *</label>
               <input type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })}

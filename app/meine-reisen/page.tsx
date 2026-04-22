@@ -29,15 +29,15 @@ export default function MeineReisenPage() {
 
   return (
     <div className="min-h-screen bg-white pt-32">
-      <div className="max-w-[1400px] mx-auto px-8 py-16">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-16">
-          <div className="flex items-center gap-4 mb-4">
-            <Heart className="w-10 h-10 text-[var(--champagne)] fill-[var(--champagne)]" />
-            <h1 className="font-serif text-5xl text-[var(--navy)]">My Trips</h1>
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 py-8 sm:py-16">
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-8 sm:mb-16">
+          <div className="flex items-center gap-3 sm:gap-4 mb-4">
+            <Heart className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--champagne)] fill-[var(--champagne)]" />
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[var(--navy)]">My Trips</h1>
           </div>
-          <p className="text-[var(--navy)]/70 text-lg">Your saved favorites and dream trips</p>
+          <p className="text-[var(--navy)]/70 text-base sm:text-lg">Your saved favorites and dream trips</p>
         </motion.div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {favorites.map((trip, index) => (
             <motion.div key={trip.id} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative bg-white border-2 border-[var(--sand)] hover:border-[var(--champagne)] transition-all overflow-hidden">

@@ -6,8 +6,8 @@ import FooterBrand from './FooterBrand';
 export default function Footer() {
   return (
     <footer className="bg-[var(--navy)] text-white">
-      <div className="max-w-[1600px] mx-auto px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-8 py-10 sm:py-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
           <FooterBrand />
           <div>
             <h3 className="font-serif text-xl mb-6">Quick Links</h3>

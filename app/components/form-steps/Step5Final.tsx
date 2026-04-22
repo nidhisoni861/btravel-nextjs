@@ -13,8 +13,8 @@ type Props = {
 export default function Step5Final({ formData, updateFormData, prevStep, handleSubmit }: Props) {
   return (
     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }}>
-      <h2 className="font-serif text-3xl text-[var(--navy)] mb-3">Do you have any special requests?</h2>
-      <p className="text-[var(--navy)]/60 mb-10">Share your wishes and how we can reach you</p>
+      <h2 className="font-serif text-2xl sm:text-3xl text-[var(--navy)] mb-3">Do you have any special requests?</h2>
+      <p className="text-[var(--navy)]/60 mb-6 sm:mb-10">Share your wishes and how we can reach you</p>
       <div className="space-y-6">
         <div>
           <label htmlFor="specialRequests" className="block text-[var(--navy)] mb-3">Special Requests</label>
@@ -24,7 +24,7 @@ export default function Step5Final({ formData, updateFormData, prevStep, handleS
         </div>
         <div className="border-t-2 border-[var(--sand)] pt-6">
           <h3 className="text-[var(--navy)] font-medium mb-6">Contact Information</h3>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label htmlFor="firstName" className="block text-[var(--navy)] mb-2">First Name</label>
               <input type="text" id="firstName" value={formData.firstName} onChange={(e) => updateFormData({ firstName: e.target.value })}
@@ -41,7 +41,7 @@ export default function Step5Final({ formData, updateFormData, prevStep, handleS
             <input type="text" id="address" value={formData.address} onChange={(e) => updateFormData({ address: e.target.value })}
               className="w-full p-3 border-2 border-[var(--sand)] focus:border-[var(--champagne)] focus:outline-none transition-colors" />
           </div>
-          <div className="grid grid-cols-2 gap-4 mt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
             <div>
               <label htmlFor="phoneNumber" className="block text-[var(--navy)] mb-2">Phone Number</label>
               <input type="tel" id="phoneNumber" value={formData.phoneNumber} onChange={(e) => updateFormData({ phoneNumber: e.target.value })}

@@ -26,17 +26,17 @@ export default function CheckoutPage() {
 
   return (
     <div className="min-h-screen bg-white pt-32">
-      <div className="max-w-[1200px] mx-auto px-8 py-16">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-16">
-          <div className="flex items-center gap-4 mb-4"><Lock className="w-10 h-10 text-[var(--champagne)]" /><h1 className="font-serif text-5xl text-[var(--navy)]">Checkout</h1></div>
-          <p className="text-[var(--navy)]/70 text-lg">Secure payment with SSL encryption</p>
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-8 py-8 sm:py-16">
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mb-8 sm:mb-16">
+          <div className="flex items-center gap-3 sm:gap-4 mb-4"><Lock className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--champagne)]" /><h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[var(--navy)]">Checkout</h1></div>
+          <p className="text-[var(--navy)]/70 text-base sm:text-lg">Secure payment with SSL encryption</p>
         </motion.div>
         <form onSubmit={handleSubmit}>
-          <div className="grid lg:grid-cols-3 gap-12">
+          <div className="grid lg:grid-cols-3 gap-6 sm:gap-12">
             <div className="lg:col-span-2 space-y-10">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
                 <h2 className="font-serif text-2xl text-[var(--navy)] mb-6">Select Payment Method</h2>
-                <div className="grid md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {paymentMethods.map((pm) => (
                     <button key={pm.id} type="button" onClick={() => setPaymentMethod(pm.id)}
                       className={`p-6 border-2 transition-all ${paymentMethod === pm.id ? 'border-[var(--champagne)] bg-[var(--champagne)]/10' : 'border-[var(--sand)] hover:border-[var(--champagne)]'}`}>
@@ -51,16 +51,16 @@ export default function CheckoutPage() {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
                 <h2 className="font-serif text-2xl text-[var(--navy)] mb-6">Billing Information</h2>
                 <div className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div><label className="block text-[var(--navy)] font-medium mb-2">First Name *</label><input type="text" value={formData.firstName} onChange={up('firstName')} className={inputCls} required /></div>
                     <div><label className="block text-[var(--navy)] font-medium mb-2">Last Name *</label><input type="text" value={formData.lastName} onChange={up('lastName')} className={inputCls} required /></div>
                   </div>
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div><label className="block text-[var(--navy)] font-medium mb-2">Email *</label><input type="email" value={formData.email} onChange={up('email')} className={inputCls} required /></div>
                     <div><label className="block text-[var(--navy)] font-medium mb-2">Phone *</label><input type="tel" value={formData.phone} onChange={up('phone')} className={inputCls} required /></div>
                   </div>
                   <div><label className="block text-[var(--navy)] font-medium mb-2">Street and Number *</label><input type="text" value={formData.street} onChange={up('street')} className={inputCls} required /></div>
-                  <div className="grid md:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                     <div><label className="block text-[var(--navy)] font-medium mb-2">Postal Code *</label><input type="text" value={formData.postalCode} onChange={up('postalCode')} className={inputCls} required /></div>
                     <div className="md:col-span-2"><label className="block text-[var(--navy)] font-medium mb-2">City *</label><input type="text" value={formData.city} onChange={up('city')} className={inputCls} required /></div>
                   </div>
@@ -82,7 +82,7 @@ export default function CheckoutPage() {
               )}
             </div>
             <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="lg:col-span-1">
-              <div className="bg-[var(--sand-light)] border-2 border-[var(--sand)] p-8 sticky top-32">
+              <div className="bg-[var(--sand-light)] border-2 border-[var(--sand)] p-5 sm:p-8 sticky top-32">
                 <h2 className="font-serif text-2xl text-[var(--navy)] mb-6">Order Summary</h2>
                 <div className="space-y-4 mb-6">
                   <div className="pb-4 border-b-2 border-[var(--sand)]">

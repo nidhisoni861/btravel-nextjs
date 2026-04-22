@@ -25,9 +25,9 @@ export default function Step1Occasion({ formData, updateFormData, nextStep }: Pr
 
   return (
     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }}>
-      <h2 className="font-serif text-3xl text-[var(--navy)] mb-3">Is there a special occasion?</h2>
-      <p className="text-[var(--navy)]/60 mb-10">Select the occasion for your trip</p>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <h2 className="font-serif text-2xl sm:text-3xl text-[var(--navy)] mb-3">Is there a special occasion?</h2>
+      <p className="text-[var(--navy)]/60 mb-6 sm:mb-10">Select the occasion for your trip</p>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
         {occasions.map((occasion) => (
           <motion.button key={occasion.value} onClick={() => handleSelect(occasion.value)}
             className={`relative overflow-hidden border-2 transition-all hover:border-[var(--champagne)] hover:shadow-lg group ${formData.occasion === occasion.value ? 'border-[var(--champagne)]' : 'border-[var(--sand)]'}`}

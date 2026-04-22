@@ -31,36 +31,36 @@ export default function RegistrierungPage() {
 
   return (
     <div className="min-h-screen bg-white pt-32">
-      <div className="max-w-[800px] mx-auto px-8 py-16">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center mb-16">
-          <div className="flex items-center justify-center gap-4 mb-4"><UserPlus className="w-10 h-10 text-[var(--champagne)]" /><h1 className="font-serif text-5xl text-[var(--navy)]">Registration</h1></div>
-          <p className="text-[var(--navy)]/70 text-lg">Create your BeTravel customer account</p>
+      <div className="max-w-[800px] mx-auto px-4 sm:px-8 py-8 sm:py-16">
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center mb-8 sm:mb-16">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4"><UserPlus className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--champagne)]" /><h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[var(--navy)]">Registration</h1></div>
+          <p className="text-[var(--navy)]/70 text-base sm:text-lg">Create your BeTravel customer account</p>
         </motion.div>
-        <motion.form initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} onSubmit={handleSubmit} className="bg-white border-2 border-[var(--sand)] p-10">
-          <div className="mb-10 pb-10 border-b-2 border-[var(--sand)]">
-            <div className="flex items-center gap-3 mb-6"><User className="w-6 h-6 text-[var(--champagne)]" /><h2 className="font-serif text-2xl text-[var(--navy)]">Personal Information</h2></div>
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
+        <motion.form initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} onSubmit={handleSubmit} className="bg-white border-2 border-[var(--sand)] p-5 sm:p-8 md:p-10">
+          <div className="mb-8 sm:mb-10 pb-8 sm:pb-10 border-b-2 border-[var(--sand)]">
+            <div className="flex items-center gap-3 mb-5 sm:mb-6"><User className="w-6 h-6 text-[var(--champagne)]" /><h2 className="font-serif text-xl sm:text-2xl text-[var(--navy)]">Personal Information</h2></div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
               <div><label className="block text-[var(--navy)] font-medium mb-2">First Name *</label><input type="text" value={formData.firstName} onChange={up('firstName')} className={inputCls} required /></div>
               <div><label className="block text-[var(--navy)] font-medium mb-2">Last Name *</label><input type="text" value={formData.lastName} onChange={up('lastName')} className={inputCls} required /></div>
             </div>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div><label className="block text-[var(--navy)] font-medium mb-2">Email *</label><input type="email" value={formData.email} onChange={up('email')} className={inputCls} required /></div>
               <div><label className="block text-[var(--navy)] font-medium mb-2">Phone</label><input type="tel" value={formData.phone} onChange={up('phone')} className={inputCls} /></div>
             </div>
           </div>
-          <div className="mb-10 pb-10 border-b-2 border-[var(--sand)]">
-            <div className="flex items-center gap-3 mb-6"><MapPin className="w-6 h-6 text-[var(--champagne)]" /><h2 className="font-serif text-2xl text-[var(--navy)]">Address</h2></div>
-            <div className="space-y-6">
+          <div className="mb-8 sm:mb-10 pb-8 sm:pb-10 border-b-2 border-[var(--sand)]">
+            <div className="flex items-center gap-3 mb-5 sm:mb-6"><MapPin className="w-6 h-6 text-[var(--champagne)]" /><h2 className="font-serif text-xl sm:text-2xl text-[var(--navy)]">Address</h2></div>
+            <div className="space-y-4 sm:space-y-6">
               <div><label className="block text-[var(--navy)] font-medium mb-2">Street and Number</label><input type="text" value={formData.street} onChange={up('street')} className={inputCls} /></div>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                 <div><label className="block text-[var(--navy)] font-medium mb-2">Postal Code</label><input type="text" value={formData.postalCode} onChange={up('postalCode')} className={inputCls} /></div>
-                <div className="md:col-span-2"><label className="block text-[var(--navy)] font-medium mb-2">City</label><input type="text" value={formData.city} onChange={up('city')} className={inputCls} /></div>
+                <div className="sm:col-span-2"><label className="block text-[var(--navy)] font-medium mb-2">City</label><input type="text" value={formData.city} onChange={up('city')} className={inputCls} /></div>
               </div>
             </div>
           </div>
-          <div className="mb-10">
-            <div className="flex items-center gap-3 mb-6"><Lock className="w-6 h-6 text-[var(--champagne)]" /><h2 className="font-serif text-2xl text-[var(--navy)]">Set Password</h2></div>
-            <div className="grid md:grid-cols-2 gap-6">
+          <div className="mb-8 sm:mb-10">
+            <div className="flex items-center gap-3 mb-5 sm:mb-6"><Lock className="w-6 h-6 text-[var(--champagne)]" /><h2 className="font-serif text-xl sm:text-2xl text-[var(--navy)]">Set Password</h2></div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label className="block text-[var(--navy)] font-medium mb-2">Password *</label>
                 <input type="password" value={formData.password} onChange={up('password')} className={inputCls} required minLength={8} />

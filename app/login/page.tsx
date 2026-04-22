@@ -20,13 +20,13 @@ export default function LoginPage() {
   const handleLogin = (e: React.FormEvent) => { e.preventDefault(); router.push('/dashboard'); };
 
   return (
-    <div className="min-h-screen relative flex items-center justify-center px-8">
+    <div className="min-h-screen relative flex items-center justify-center px-4 sm:px-8 py-24 sm:py-0">
       <div className="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1753898464508-580d033a1a3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB0cmF2ZWwlMjBleG90aWMlMjBkZXN0aW5hdGlvbiUyMGVkaXRvcmlhbHxlbnwxfHx8fDE3NzU3MzcwMjB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Login" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-[var(--navy)]/70" />
       </div>
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-        className="relative z-10 w-full max-w-[500px] bg-white/95 backdrop-blur-sm p-12 shadow-2xl">
+        className="relative z-10 w-full max-w-[500px] bg-white/95 backdrop-blur-sm p-6 sm:p-8 md:p-12 shadow-2xl">
         <div className="text-center mb-8">
           <h1 className="font-serif text-4xl text-[var(--navy)] mb-3">Login</h1>
           <p className="text-[var(--navy)]/60">Welcome back</p>

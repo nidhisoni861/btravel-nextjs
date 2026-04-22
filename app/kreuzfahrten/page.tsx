@@ -17,16 +17,16 @@ export default function KreuzfahrtenPage() {
           <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200" alt="Luxury Cruise" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-[var(--navy)]/60" />
         </div>
-        <div className="relative z-10 text-center max-w-4xl px-8">
+        <div className="relative z-10 text-center max-w-4xl px-4 sm:px-8">
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-serif text-6xl text-white mb-6">Cruise Offers</motion.h1>
+            className="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-4 sm:mb-6">Cruise Offers</motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-white/90 text-xl">Discover the world on luxurious cruise ships</motion.p>
+            className="text-white/90 text-base sm:text-xl">Discover the world on luxurious cruise ships</motion.p>
         </div>
       </motion.div>
 
-      <div className="max-w-[1400px] mx-auto px-8 py-24">
-        <div className="grid md:grid-cols-2 gap-12">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-8 py-12 sm:py-24">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-12">
           {cruises.map((cruise, index) => (
             <motion.div key={cruise.id} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -37,7 +37,7 @@ export default function KreuzfahrtenPage() {
                   <Heart className={`w-5 h-5 ${favorites.includes(cruise.id) ? 'fill-red-500 text-red-500' : 'text-[var(--navy)]'}`} />
                 </button>
               </div>
-              <div className="p-8">
+              <div className="p-4 sm:p-8">
                 <h3 className="font-serif text-2xl text-[var(--navy)] mb-4">{cruise.title}</h3>
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-3 text-[var(--navy)]/70"><MapPin className="w-5 h-5 text-[var(--champagne)]" /><span>{cruise.destination}</span></div>

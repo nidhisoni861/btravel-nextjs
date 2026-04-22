@@ -65,12 +65,17 @@
     @apply border-border outline-ring/50;
   }
 
+  html {
+    font-size: var(--font-size);
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
+    overflow-x: hidden;
+    width: 100%;
   }
-
-  html { font-size: var(--font-size); }
 
   h1 { font-family: var(--font-serif); font-size: var(--text-2xl); font-weight: var(--font-weight-medium); line-height: 1.5; }
   h2 { font-family: var(--font-serif); font-size: var(--text-xl); font-weight: var(--font-weight-medium); line-height: 1.5; }
@@ -87,7 +92,7 @@
   }
   .rdp-months { display: flex; gap: 1rem; }
   .rdp-month { width: 100%; }
-  .rdp-caption { display: flex; justify-content: center; align-items: center; margin-bottom: 1rem; }
+  .rdp-caption { position: relative; display: flex; justify-content: center; align-items: center; margin-bottom: 1rem; }
   .rdp-caption_label { font-family: var(--font-serif); font-size: 1.125rem; color: var(--navy); }
   .rdp-nav { position: absolute; right: 0; display: flex; gap: 0.5rem; }
   .rdp-nav_button { width: 2rem; height: 2rem; border-radius: 0; border: 1px solid var(--sand); background: white; color: var(--navy); cursor: pointer; transition: all 0.2s; }

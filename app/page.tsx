@@ -13,13 +13,13 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--navy)]/60 via-[var(--navy)]/40 to-[var(--navy)]/80" />
       </div>
-      <div className="relative z-10 min-h-screen flex items-center justify-center px-8 py-32">
+      <div className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-8 py-24 sm:py-32">
         <div className="max-w-[900px] w-full">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-center mb-16">
-            <h1 className="font-serif text-6xl md:text-7xl text-white mb-6 leading-tight">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-center mb-8 sm:mb-16">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-4 sm:mb-6 leading-tight">
               Extraordinary Journeys<br /><span className="text-[var(--champagne)]">Tailored to You</span>
             </h1>
-            <p className="text-white/80 text-lg max-w-[600px] mx-auto">Discover the world with our exclusive travel service</p>
+            <p className="text-white/80 text-base sm:text-lg max-w-[600px] mx-auto">Discover the world with our exclusive travel service</p>
           </motion.div>
           <InquiryForm />
         </div>

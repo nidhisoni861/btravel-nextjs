@@ -40,8 +40,8 @@ export default function Step3Logistics({ formData, updateFormData, nextStep, pre
 
   return (
     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }}>
-      <h2 className="font-serif text-3xl text-[var(--navy)] mb-3">When and with whom may we plan?</h2>
-      <p className="text-[var(--navy)]/60 mb-10">Give us the most important details</p>
+      <h2 className="font-serif text-2xl sm:text-3xl text-[var(--navy)] mb-3">When and with whom may we plan?</h2>
+      <p className="text-[var(--navy)]/60 mb-6 sm:mb-10">Give us the most important details</p>
       <div className="space-y-8">
         <div>
           <label className="block text-[var(--navy)] mb-3">Travel Dates</label>
@@ -54,7 +54,7 @@ export default function Step3Logistics({ formData, updateFormData, nextStep, pre
             </span>
           </button>
           {showCalendar && (
-            <div className="mt-4 p-4 border-2 border-[var(--sand)] bg-white">
+            <div className="mt-4 p-2 sm:p-4 border-2 border-[var(--sand)] bg-white overflow-x-auto">
               <DayPicker mode="range" defaultMonth={defaultMonth} selected={formData.dateRange.from ? formData.dateRange : defaultSelected} onSelect={handleDateSelect} locale={de} className="mx-auto" />
             </div>
           )}
@@ -72,22 +72,22 @@ export default function Step3Logistics({ formData, updateFormData, nextStep, pre
         </div>
         <div>
           <label className="block text-[var(--navy)] mb-3">Travel Group</label>
-          <div className="grid grid-cols-3 md:grid-cols-5 gap-3">
+          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3">
             {travelParties.map((party) => (
               <button key={party.value} onClick={() => updateFormData({ travelParty: party.value })}
                 className={`relative overflow-hidden border-2 transition-all group ${formData.travelParty === party.value ? 'border-[var(--champagne)]' : 'border-[var(--sand)] hover:border-[var(--champagne)]'}`}>
-                <div className="relative h-20 overflow-hidden">
+                <div className="relative h-16 sm:h-20 overflow-hidden">
                   <img src={party.image} alt={party.label} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   <div className={`absolute inset-0 transition-all ${formData.travelParty === party.value ? 'bg-[var(--champagne)]/20' : 'bg-[#0f1729]/40 group-hover:bg-[#0f1729]/20'}`} />
                 </div>
-                <div className="p-2 bg-white"><div className="text-[var(--navy)] text-sm">{party.label}</div></div>
+                <div className="p-1 sm:p-2 bg-white"><div className="text-[var(--navy)] text-xs sm:text-sm leading-tight">{party.label}</div></div>
               </button>
             ))}
           </div>
         </div>
         <div className="mt-8 pt-8 border-t-2 border-[var(--sand)]">
           <h3 className="font-serif text-xl text-[var(--navy)] mb-4">Do you have a dream destination – or may we inspire you?</h3>
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <input type="text" value={destination} onChange={(e) => setDestination(e.target.value)} placeholder="Enter destination"
               className="flex-1 p-3 border-2 border-[var(--sand)] focus:border-[var(--champagne)] focus:outline-none transition-colors" />
             <button className="px-6 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors whitespace-nowrap">Inspire Me</button>

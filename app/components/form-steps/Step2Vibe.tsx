@@ -26,9 +26,9 @@ export default function Step2Vibe({ formData, updateFormData, nextStep, prevStep
 
   return (
     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }}>
-      <h2 className="font-serif text-3xl text-[var(--navy)] mb-3">How would you like to feel on this trip?</h2>
-      <p className="text-[var(--navy)]/60 mb-10">Select one or more moods</p>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+      <h2 className="font-serif text-2xl sm:text-3xl text-[var(--navy)] mb-3">How would you like to feel on this trip?</h2>
+      <p className="text-[var(--navy)]/60 mb-6 sm:mb-10">Select one or more moods</p>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
         {vibes.map((vibe) => {
           const isSelected = formData.vibe.includes(vibe.value);
           return (
