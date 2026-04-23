@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 import { Search, Anchor, BookOpen, CalendarDays, Heart, ShoppingCart, User, FileText, Settings, LogOut, HelpCircle, Phone, Mail } from 'lucide-react';
 
 const navLinks = [
-  { path: '/', label: 'Reise finden', icon: Search },
+  { path: '/reisen-finden', label: 'Reise finden', icon: Search },
   { path: '/kreuzfahrten', label: 'Kreuzfahrten', icon: Anchor },
   { path: '/reise-blog', label: 'Reise Blog', icon: BookOpen },
   { path: '/termin-buchen', label: 'Termin buchen', icon: CalendarDays },
