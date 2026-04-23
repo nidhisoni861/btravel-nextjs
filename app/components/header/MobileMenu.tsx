@@ -2,13 +2,13 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'motion/react';
-import { Heart, ShoppingCart, User, FileText, Settings, LogOut, HelpCircle, Phone, Mail } from 'lucide-react';
+import { Search, Anchor, BookOpen, CalendarDays, Heart, ShoppingCart, User, FileText, Settings, LogOut, HelpCircle, Phone, Mail } from 'lucide-react';
 
 const navLinks = [
-  { path: '/', label: 'Find Trips' },
-  { path: '/kreuzfahrten', label: 'Cruises' },
-  { path: '/reise-blog', label: 'Travel Blog' },
-  { path: '/termin-buchen', label: 'Book Appointment' },
+  { path: '/', label: 'Reise finden', icon: Search },
+  { path: '/kreuzfahrten', label: 'Kreuzfahrten', icon: Anchor },
+  { path: '/reise-blog', label: 'Reise Blog', icon: BookOpen },
+  { path: '/termin-buchen', label: 'Termin buchen', icon: CalendarDays },
 ];
 
 type Props = {
@@ -33,7 +33,8 @@ export default function MobileMenu({ isLoggedIn, user, onClose, onLogout, onLogi
         <nav className="flex flex-col gap-2 mb-8">
           {navLinks.map((link) => (
             <Link key={link.path} href={link.path} onClick={onClose}
-              className={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${pathname === link.path ? 'bg-[var(--champagne)]/10 text-[var(--champagne)]' : 'text-[var(--navy)] hover:bg-[var(--sand-light)]'}`}>
+              className={`flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium transition-colors ${pathname === link.path ? 'bg-[var(--champagne)]/10 text-[var(--champagne)]' : 'text-[var(--navy)] hover:bg-[var(--sand-light)]'}`}>
+              <link.icon className="w-5 h-5" />
               {link.label}
             </Link>
           ))}
@@ -41,7 +42,7 @@ export default function MobileMenu({ isLoggedIn, user, onClose, onLogout, onLogi
         {isLoggedIn && (
           <>
             <div className="mb-8 pb-8 border-b border-[var(--sand)]">
-              <h3 className="text-xs font-semibold text-[var(--navy)]/60 uppercase tracking-wider mb-3 px-4">Quick Access</h3>
+              <h3 className="text-xs font-semibold text-[var(--navy)]/60 uppercase tracking-wider mb-3 px-4">Schnellzugriff</h3>
               <div className="flex flex-col gap-2">
                 <Link href="/meine-reisen" onClick={onClose} className="flex items-center gap-3 px-4 py-3 text-[var(--navy)] hover:bg-[var(--sand-light)] rounded-lg transition-colors">
                   <Heart className="w-5 h-5 text-[var(--champagne)]" /><span className="text-sm font-medium">Meine Reisen</span>
@@ -57,7 +58,7 @@ export default function MobileMenu({ isLoggedIn, user, onClose, onLogout, onLogi
                   <img src={user.avatar} alt={user.firstName} className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <p className="text-xs text-[var(--navy)]/60">Signed in as</p>
+                  <p className="text-xs text-[var(--navy)]/60">Angemeldet als</p>
                   <p className="font-semibold text-[var(--navy)]">{user.firstName} {user.lastName}</p>
                 </div>
               </div>
@@ -78,14 +79,14 @@ export default function MobileMenu({ isLoggedIn, user, onClose, onLogout, onLogi
                   <HelpCircle className="w-5 h-5 text-[var(--champagne)]" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-lg text-[var(--navy)] mb-1">Need Help?</h3>
-                  <p className="text-sm text-[var(--navy)]/60">Our team is available daily from 9 AM to 10 PM</p>
+                  <h3 className="font-serif text-lg text-[var(--navy)] mb-1">Hilfe & Kontakt</h3>
+                  <p className="text-sm text-[var(--navy)]/60">Täglich von 9 bis 22 Uhr für Sie da</p>
                 </div>
               </div>
               <div className="space-y-3">
                 <a href="tel:+497111234567" className="flex items-center gap-3 px-4 py-3 bg-white rounded-lg hover:bg-[var(--champagne)]/5 transition-colors border border-[var(--sand)]">
                   <Phone className="w-5 h-5 text-[var(--champagne)]" />
-                  <div><p className="text-xs text-[var(--navy)]/60">Phone</p><p className="text-sm font-semibold text-[var(--navy)]">+49 711 123 456 7</p></div>
+                  <div><p className="text-xs text-[var(--navy)]/60">Telefon</p><p className="text-sm font-semibold text-[var(--navy)]">+49 711 123 456 7</p></div>
                 </a>
                 <a href="mailto:info@betravel.de" className="flex items-center gap-3 px-4 py-3 bg-white rounded-lg hover:bg-[var(--champagne)]/5 transition-colors border border-[var(--sand)]">
                   <Mail className="w-5 h-5 text-[var(--champagne)]" />
@@ -97,8 +98,8 @@ export default function MobileMenu({ isLoggedIn, user, onClose, onLogout, onLogi
         )}
         {!isLoggedIn && (
           <div className="flex flex-col gap-3">
-            <Link href="/registrierung" onClick={onClose} className="w-full py-3 border-2 border-[var(--sand)] text-[var(--navy)] text-center rounded-lg font-medium hover:border-[var(--champagne)] transition-colors">Sign Up</Link>
-            <button onClick={() => { onLogin(); onClose(); }} className="w-full py-3 bg-[var(--champagne)] text-white rounded-lg font-semibold hover:bg-[var(--champagne)]/90 transition-colors">Sign In</button>
+            <Link href="/registrierung" onClick={onClose} className="w-full py-3 border-2 border-[var(--sand)] text-[var(--navy)] text-center rounded-lg font-medium hover:border-[var(--champagne)] transition-colors">Registrieren</Link>
+            <button onClick={() => { onLogin(); onClose(); }} className="w-full py-3 bg-[var(--champagne)] text-white rounded-lg font-semibold hover:bg-[var(--champagne)]/90 transition-colors">Anmelden</button>
           </div>
         )}
       </div>

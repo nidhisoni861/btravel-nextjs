@@ -17,7 +17,6 @@ export default function HelpDropdown({ show, onToggle, dropdownRef, textColor }:
         className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${textColor} hover:text-[var(--champagne)] hover:bg-[var(--champagne)]/5`}
       >
         <HelpCircle className="w-5 h-5" />
-        <span className="text-sm font-medium hidden xl:inline">Help & Contact</span>
         <ChevronDown className={`w-4 h-4 transition-transform ${show ? 'rotate-180' : ''}`} />
       </button>
       <AnimatePresence>
@@ -35,8 +34,8 @@ export default function HelpDropdown({ show, onToggle, dropdownRef, textColor }:
                   <HelpCircle className="w-5 h-5 text-[var(--champagne)]" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-lg text-[var(--navy)] mb-1">Have questions about your trip?</h3>
-                  <p className="text-sm text-[var(--navy)]/60">Our service team is available daily from 9 AM to 10 PM.</p>
+                  <h3 className="font-serif text-lg text-[var(--navy)] mb-1">Fragen zu Ihrer Reise?</h3>
+                  <p className="text-sm text-[var(--navy)]/60">Unser Service-Team ist täglich von 9 bis 22 Uhr für Sie da.</p>
                 </div>
               </div>
               <div className="space-y-2 mb-5">
@@ -45,7 +44,7 @@ export default function HelpDropdown({ show, onToggle, dropdownRef, textColor }:
                     <Phone className="w-5 h-5 text-[var(--champagne)]" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-xs text-[var(--navy)]/60 mb-0.5">Phone</p>
+                    <p className="text-xs text-[var(--navy)]/60 mb-0.5">Telefon</p>
                     <p className="text-sm font-semibold text-[var(--navy)] group-hover:text-[var(--champagne)] transition-colors">+49 711 123 456 7</p>
                   </div>
                 </a>
@@ -60,9 +59,9 @@ export default function HelpDropdown({ show, onToggle, dropdownRef, textColor }:
                 </a>
               </div>
               <div className="pt-4 border-t border-[var(--sand)]">
-                <p className="text-xs text-[var(--navy)]/60 mb-3">Book your vacation quickly and easily by phone</p>
+                <p className="text-xs text-[var(--navy)]/60 mb-3">Buchen Sie Ihren Urlaub schnell und einfach per Telefon</p>
                 <a href="tel:+497111234567" className="block w-full px-4 py-2.5 bg-[var(--champagne)] text-white text-center text-sm font-semibold rounded-lg hover:bg-[var(--champagne)]/90 transition-colors">
-                  Call Now
+                  Jetzt anrufen
                 </a>
               </div>
             </div>

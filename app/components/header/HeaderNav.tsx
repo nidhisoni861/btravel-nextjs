@@ -1,12 +1,13 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Search, Anchor, BookOpen, CalendarDays } from 'lucide-react';
 
 const navLinks = [
-  { path: '/', label: 'Find Trips' },
-  { path: '/kreuzfahrten', label: 'Cruises' },
-  { path: '/reise-blog', label: 'Travel Blog' },
-  { path: '/termin-buchen', label: 'Book Appointment' },
+  { path: '/', label: 'Reise finden', icon: Search },
+  { path: '/kreuzfahrten', label: 'Kreuzfahrten', icon: Anchor },
+  { path: '/reise-blog', label: 'Reise Blog', icon: BookOpen },
+  { path: '/termin-buchen', label: 'Termin buchen', icon: CalendarDays },
 ];
 
 type Props = { textColor: string };
@@ -19,12 +20,13 @@ export default function HeaderNav({ textColor }: Props) {
         <Link
           key={link.path}
           href={link.path}
-          className={`px-4 py-2 text-sm font-medium rounded-lg transition-all relative group ${
+          className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all relative group ${
             pathname === link.path
               ? 'text-[var(--champagne)]'
               : `${textColor} hover:text-[var(--champagne)]`
           }`}
         >
+          <link.icon className="w-4 h-4" />
           {link.label}
           <span
             className={`absolute bottom-0 left-0 h-0.5 bg-[var(--champagne)] transition-all ${

@@ -62,7 +62,6 @@ export default function Header() {
                   <HelpDropdown show={showHelpDropdown} onToggle={() => { setShowHelpDropdown(!showHelpDropdown); setShowProfileDropdown(false); }} dropdownRef={helpRef} textColor={textColor} />
                   <Link href="/meine-reisen" className={`relative flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${pathname === '/meine-reisen' ? 'text-[var(--champagne)] bg-[var(--champagne)]/10' : `${textColor} hover:text-[var(--champagne)] hover:bg-[var(--champagne)]/5`}`} title="Favorites">
                     <Heart className={`w-5 h-5 ${pathname === '/meine-reisen' ? 'fill-[var(--champagne)]' : ''}`} />
-                    <span className="text-sm font-medium hidden xl:inline">Favorites</span>
                   </Link>
                   <ProfileDropdown user={user} show={showProfileDropdown} onToggle={() => { setShowProfileDropdown(!showProfileDropdown); setShowHelpDropdown(false); }} onClose={() => setShowProfileDropdown(false)} dropdownRef={profileRef} textColor={textColor} onLogout={handleLogout} />
                 </>
@@ -70,7 +69,7 @@ export default function Header() {
               {!isLoggedIn && (
                 <div className="flex items-center gap-3">
                   <Link href="/registrierung" className={`text-sm font-medium transition-colors ${textColor} hover:text-[var(--champagne)]`}>Registrieren</Link>
-                  <button onClick={() => setIsLoggedIn(true)} className="px-6 py-2.5 bg-[var(--champagne)] text-white text-sm font-semibold rounded-lg hover:bg-[var(--champagne)]/90 transition-all hover:shadow-lg">Anmelden</button>
+                  <button onClick={() => setIsLoggedIn(true)} className="px-5 py-2 bg-[var(--champagne)] text-white text-sm font-semibold rounded-lg hover:bg-[var(--champagne)]/90 transition-all hover:shadow-lg">Anmelden</button>
                 </div>
               )}
             </div>
