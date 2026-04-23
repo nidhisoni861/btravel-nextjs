@@ -71,9 +71,9 @@ export default function ChatbotPanel({ onClose }: ChatbotPanelProps) {
                  border border-[var(--border)] overflow-hidden"
     >
       {/* ── Header ── */}
-      <div className="flex items-center gap-3 px-5 py-4 bg-[var(--navy)] shrink-0">
-        <div className="w-9 h-9 rounded-full bg-[var(--champagne)]/20 flex items-center justify-center shrink-0">
-          <Sparkles className="w-4 h-4 text-[var(--champagne)]" />
+      <div className="flex items-center gap-3 px-5 py-4 bg-gradient-to-r from-[#10B981] to-[#14B8A6] shrink-0">
+        <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+          <Sparkles className="w-4 h-4 text-white" />
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-white text-sm font-semibold leading-tight">BeTravel Assistent</p>
@@ -99,14 +99,14 @@ export default function ChatbotPanel({ onClose }: ChatbotPanelProps) {
             className={`flex items-end gap-2 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             {msg.role === 'bot' && (
-              <div className="w-6 h-6 rounded-full bg-[var(--navy)] flex items-center justify-center shrink-0 mb-0.5">
-                <Sparkles className="w-3 h-3 text-[var(--champagne)]" />
+              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#10B981] to-[#14B8A6] flex items-center justify-center shrink-0 mb-0.5">
+                <Sparkles className="w-3 h-3 text-white" />
               </div>
             )}
             <div
               className={`max-w-[78%] px-4 py-2.5 text-sm leading-relaxed ${
                 msg.role === 'user'
-                  ? 'bg-[var(--champagne)] text-white rounded-[14px] rounded-br-[4px]'
+                  ? 'bg-gradient-to-r from-[#10B981] to-[#14B8A6] text-white rounded-[14px] rounded-br-[4px]'
                   : 'bg-white text-[var(--navy)] rounded-[14px] rounded-bl-[4px] shadow-sm border border-[var(--border)]'
               }`}
             >
@@ -133,7 +133,7 @@ export default function ChatbotPanel({ onClose }: ChatbotPanelProps) {
             aria-label="Spracheingabe"
             className={`w-8 h-8 shrink-0 flex items-center justify-center rounded-full transition-all ${
               isListening
-                ? 'bg-[var(--champagne)] text-white'
+                ? 'bg-[var(--navy)] text-white'
                 : 'text-[var(--muted-foreground)] hover:text-[var(--navy)] hover:bg-[var(--sand)]'
             }`}
           >
@@ -143,7 +143,7 @@ export default function ChatbotPanel({ onClose }: ChatbotPanelProps) {
             onClick={sendMessage}
             disabled={!input.trim()}
             aria-label="Senden"
-            className="w-8 h-8 shrink-0 flex items-center justify-center bg-[var(--champagne)] text-white rounded-full transition-all hover:bg-[var(--champagne)]/90 disabled:opacity-40 disabled:cursor-not-allowed"
+            className="w-8 h-8 shrink-0 flex items-center justify-center bg-gradient-to-br from-[#10B981] to-[#14B8A6] text-white rounded-full transition-all hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed"
           >
             <Send className="w-3.5 h-3.5" />
           </button>
