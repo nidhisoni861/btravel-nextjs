@@ -36,36 +36,35 @@ export default function WelcomeGreeting({ name = 'Nidhi', delay = 0 }: WelcomeGr
   return (
     // Plain div — outer enter animation is controlled by page.tsx
     <div className="space-y-4">
-      {/* Greeting line + floating icon */}
-      <div className="flex items-start justify-between gap-4">
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl text-white tracking-tight leading-[1.1] font-medium">
-          {greeting},{' '}
-          <motion.span
-            initial={{ opacity: 0, x: -14 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: delay + 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-teal-200"
-          >
-            {name}
-          </motion.span>
-        </h1>
+      {/* Greeting — icon sits inline right after the name, no flex-justify tricks */}
+      <h1 className="text-5xl sm:text-6xl lg:text-7xl text-white tracking-tight leading-[1.1] font-medium">
+        {greeting},{' '}
+        <motion.span
+          initial={{ opacity: 0, x: -14 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: delay + 0.15, ease: [0.22, 1, 0.36, 1] }}
+          className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-teal-200"
+        >
+          {name}
+        </motion.span>
 
-        {/* Animated icon badge */}
-        <motion.div
+        {/* Icon badge — inline so it sits directly beside the name */}
+        <motion.span
           initial={{ opacity: 0, scale: 0.3 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: delay + 0.35, type: 'spring', stiffness: 240, damping: 18 }}
-          className="mt-2 shrink-0"
+          className="inline-flex ml-3 align-middle"
+          style={{ verticalAlign: 'middle' }}
         >
-          <motion.div
-            animate={{ y: [0, -5, 0] }}
+          <motion.span
+            animate={{ y: [0, -3, 0] }}
             transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-lg"
+            className="inline-flex w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 items-center justify-center shadow-lg"
           >
             <PeriodIcon period={period} />
-          </motion.div>
-        </motion.div>
-      </div>
+          </motion.span>
+        </motion.span>
+      </h1>
 
       {/* Underline — draws left to right */}
       <motion.div

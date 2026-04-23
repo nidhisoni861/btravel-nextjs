@@ -74,11 +74,16 @@ export default function Welcome() {
             <WelcomeGreeting name="Nidhi" delay={2.5} />
           </motion.div>
 
-          {/* ── STEP 5: Glass card rises in while greeting is still moving ── */}
+          {/* ── STEP 5: Glass card glides in from the right — slow, cinematic, premium ── */}
           <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.1, delay: 1.7, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, x: 72 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{
+              // opacity fades in slowly and independently so the fade is clearly felt
+              opacity: { duration: 1.8, ease: 'easeOut', delay: 1.6 },
+              // x drifts home with a smooth ease-out — starts gently, decelerates to rest
+              x: { duration: 2.0, delay: 1.6, ease: [0.25, 0.46, 0.45, 0.94] },
+            }}
             className="space-y-8 bg-white/10 backdrop-blur-md p-8 sm:p-10 lg:p-12 border border-white/20 shadow-2xl ui-panel"
           >
             <div className="space-y-6">
