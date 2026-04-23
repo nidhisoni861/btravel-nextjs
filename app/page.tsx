@@ -3,17 +3,11 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
+import WelcomeGreeting from "./components/WelcomeGreeting";
 
 export default function Welcome() {
   const router = useRouter();
   const [isFormal, setIsFormal] = useState(false);
-
-  const getGreeting = () => {
-    const hour = new Date().getHours();
-    if (hour < 12) return "Guten Morgen";
-    if (hour < 18) return "Guten Tag";
-    return "Guten Abend";
-  };
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -46,21 +40,7 @@ export default function Welcome() {
             className="space-y-8 sm:space-y-12"
           >
             {/* Greeting */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              className="space-y-6"
-            >
-              <h1
-                className="text-5xl sm:text-6xl lg:text-7xl text-white tracking-tight leading-[1.1]"
-                style={{ fontFamily: "Montserrat, sans-serif" }}
-              >
-                {getGreeting()}
-              </h1>
-
-              <div className="h-1 w-24 bg-gradient-to-r from-emerald-400 to-teal-300 rounded-full" />
-            </motion.div>
+            <WelcomeGreeting name="Nidhi" />
 
             {/* Main Card */}
             <motion.div
