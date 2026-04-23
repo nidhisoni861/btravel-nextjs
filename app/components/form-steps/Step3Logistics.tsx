@@ -45,7 +45,7 @@ export default function Step3Logistics({ formData, updateFormData, nextStep, pre
       <div className="space-y-8">
         <div>
           <label className="block text-[var(--navy)] mb-3">Travel Dates</label>
-          <button onClick={() => setShowCalendar(!showCalendar)} className="w-full p-4 border-2 border-[var(--sand)] hover:border-[var(--champagne)] transition-colors flex items-center gap-3">
+          <button onClick={() => setShowCalendar(!showCalendar)} className="w-full p-4 border-2 border-[var(--sand)] hover:border-[var(--champagne)] transition-colors flex items-center gap-3 ui-control">
             <CalendarIcon className="w-5 h-5 text-[var(--champagne)]" />
             <span className="text-[var(--navy)]">
               {formData.dateRange.from && formData.dateRange.to
@@ -54,7 +54,7 @@ export default function Step3Logistics({ formData, updateFormData, nextStep, pre
             </span>
           </button>
           {showCalendar && (
-            <div className="mt-4 p-2 sm:p-4 border-2 border-[var(--sand)] bg-white overflow-x-auto">
+            <div className="mt-4 p-2 sm:p-4 border-2 border-[var(--sand)] bg-white overflow-x-auto ui-card">
               <DayPicker mode="range" defaultMonth={defaultMonth} selected={formData.dateRange.from ? formData.dateRange : defaultSelected} onSelect={handleDateSelect} locale={de} className="mx-auto" />
             </div>
           )}
@@ -64,7 +64,7 @@ export default function Step3Logistics({ formData, updateFormData, nextStep, pre
           <div className="grid grid-cols-2 gap-3">
             {flexibilityOptions.map((option) => (
               <button key={option.value} onClick={() => updateFormData({ flexibility: option.value })}
-                className={`p-3 border-2 transition-all ${formData.flexibility === option.value ? 'border-[var(--champagne)] bg-[var(--champagne)]/5' : 'border-[var(--sand)] hover:border-[var(--champagne)]'}`}>
+                className={`p-3 border-2 transition-all ui-control ${formData.flexibility === option.value ? 'border-[var(--champagne)] bg-[var(--champagne)]/5' : 'border-[var(--sand)] hover:border-[var(--champagne)]'}`}>
                 <div className="text-[var(--navy)] text-sm">{option.label}</div>
               </button>
             ))}
@@ -75,7 +75,7 @@ export default function Step3Logistics({ formData, updateFormData, nextStep, pre
           <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3">
             {travelParties.map((party) => (
               <button key={party.value} onClick={() => updateFormData({ travelParty: party.value })}
-                className={`relative overflow-hidden border-2 transition-all group ${formData.travelParty === party.value ? 'border-[var(--champagne)]' : 'border-[var(--sand)] hover:border-[var(--champagne)]'}`}>
+                className={`relative overflow-hidden border-2 transition-all group ui-card ${formData.travelParty === party.value ? 'border-[var(--champagne)]' : 'border-[var(--sand)] hover:border-[var(--champagne)]'}`}>
                 <div className="relative h-16 sm:h-20 overflow-hidden">
                   <img src={party.image} alt={party.label} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   <div className={`absolute inset-0 transition-all ${formData.travelParty === party.value ? 'bg-[var(--champagne)]/20' : 'bg-[#0f1729]/40 group-hover:bg-[#0f1729]/20'}`} />
@@ -89,15 +89,15 @@ export default function Step3Logistics({ formData, updateFormData, nextStep, pre
           <h3 className="font-serif text-xl text-[var(--navy)] mb-4">Do you have a dream destination – or may we inspire you?</h3>
           <div className="flex flex-col sm:flex-row gap-3">
             <input type="text" value={destination} onChange={(e) => setDestination(e.target.value)} placeholder="Enter destination"
-              className="flex-1 p-3 border-2 border-[var(--sand)] focus:border-[var(--champagne)] focus:outline-none transition-colors" />
-            <button className="px-6 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors whitespace-nowrap">Inspire Me</button>
+              className="flex-1 p-3 border-2 border-[var(--sand)] focus:border-[var(--champagne)] focus:outline-none transition-colors ui-control" />
+            <button className="px-6 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors whitespace-nowrap ui-control">Inspire Me</button>
           </div>
         </div>
       </div>
       <div className="flex gap-4 mt-8">
-        <button onClick={prevStep} className="px-8 py-3 border-2 border-[var(--navy)] text-[var(--navy)] hover:bg-[var(--navy)] hover:text-white transition-colors">Back</button>
+        <button onClick={prevStep} className="px-8 py-3 border-2 border-[var(--navy)] text-[var(--navy)] hover:bg-[var(--navy)] hover:text-white transition-colors ui-control">Back</button>
         <button onClick={nextStep} disabled={!formData.travelParty}
-          className="flex-1 px-8 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">Next</button>
+          className="flex-1 px-8 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ui-control">Next</button>
       </div>
     </motion.div>
   );

@@ -25,7 +25,7 @@ export default function ProfileDropdown({ user, show, onToggle, onClose, dropdow
 
   return (
     <div className="relative" ref={dropdownRef}>
-      <button onClick={onToggle} className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-[var(--champagne)]/5 transition-all">
+      <button onClick={onToggle} className="flex items-center gap-2 px-2 py-2 hover:bg-[var(--champagne)]/5 transition-all ui-control">
         <div className="w-9 h-9 rounded-full border-2 border-[var(--champagne)] overflow-hidden flex-shrink-0">
           <img src={user.avatar} alt={user.firstName} className="w-full h-full object-cover" />
         </div>
@@ -37,7 +37,7 @@ export default function ProfileDropdown({ user, show, onToggle, onClose, dropdow
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute right-0 mt-3 w-64 bg-white rounded-xl shadow-2xl border border-[var(--sand)] overflow-hidden"
+            className="absolute right-0 mt-3 w-64 bg-white shadow-2xl border border-[var(--sand)] overflow-hidden ui-card"
           >
             <div className="px-6 py-4 bg-gradient-to-r from-[var(--champagne)]/10 to-transparent border-b border-[var(--sand)]">
               <p className="text-xs text-[var(--navy)]/60 mb-1">Hallo</p>

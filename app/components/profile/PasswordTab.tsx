@@ -1,13 +1,13 @@
 'use client';
 import { Lock } from 'lucide-react';
 
-const inputCls = 'w-full p-4 border-2 border-[var(--sand)] focus:border-[var(--champagne)] focus:outline-none';
+const inputCls = 'w-full p-4 border-2 border-[var(--sand)] focus:border-[var(--champagne)] focus:outline-none ui-control';
 
 export default function PasswordTab({ onSave }: { onSave: () => void }) {
   const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); onSave(); };
 
   return (
-    <div className="bg-white border-2 border-[var(--sand)] p-10">
+    <div className="bg-white border-2 border-[var(--sand)] p-10 ui-panel">
       <h2 className="font-serif text-2xl text-[var(--navy)] mb-8">Change Password</h2>
       <form onSubmit={handleSubmit} className="space-y-6 max-w-xl">
         <div>
@@ -23,7 +23,7 @@ export default function PasswordTab({ onSave }: { onSave: () => void }) {
           <label className="block text-[var(--navy)] font-medium mb-2">Confirm New Password</label>
           <input type="password" className={inputCls} required minLength={8} />
         </div>
-        <button type="submit" className="flex items-center gap-3 px-8 py-4 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors">
+        <button type="submit" className="flex items-center gap-3 px-8 py-4 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors ui-control">
           <Lock className="w-5 h-5" /><span>Change Password</span>
         </button>
       </form>

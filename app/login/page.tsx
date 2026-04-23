@@ -26,7 +26,7 @@ export default function LoginPage() {
         <div className="absolute inset-0 bg-[var(--navy)]/70" />
       </div>
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-        className="relative z-10 w-full max-w-[500px] bg-white/95 backdrop-blur-sm p-6 sm:p-8 md:p-12 shadow-2xl">
+        className="relative z-10 w-full max-w-[500px] bg-white/95 backdrop-blur-sm p-6 sm:p-8 md:p-12 shadow-2xl ui-panel">
         <div className="text-center mb-8">
           <h1 className="font-serif text-4xl text-[var(--navy)] mb-3">Login</h1>
           <p className="text-[var(--navy)]/60">Welcome back</p>
@@ -56,7 +56,7 @@ export default function LoginPage() {
             <button type="button" className="text-[var(--champagne)] hover:underline">Forgot password?</button>
           </div>
           <motion.button type="submit" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
-            className="w-full py-3 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors">Sign In</motion.button>
+            className="w-full py-3 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors ui-control">Sign In</motion.button>
         </form>
         <div className="relative my-8">
           <div className="absolute inset-0 flex items-center"><div className="w-full border-t-2 border-[var(--sand)]" /></div>
@@ -67,7 +67,7 @@ export default function LoginPage() {
           <div className="grid grid-cols-2 gap-3">
             {socialButtons.map((btn) => (
               <button key={btn.label} type="button" onClick={btn.onClick}
-                className={`flex items-center justify-center gap-3 px-4 py-3 border-2 border-[var(--sand)] ${btn.hoverClass} hover:bg-opacity-5 transition-all`}>
+                className={`flex items-center justify-center gap-3 px-4 py-3 border-2 border-[var(--sand)] ${btn.hoverClass} hover:bg-opacity-5 transition-all ui-control`}>
                 {btn.icon}<span className="text-[var(--navy)] text-sm hidden sm:inline">{btn.label}</span>
               </button>
             ))}

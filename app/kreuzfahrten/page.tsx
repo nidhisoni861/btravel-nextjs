@@ -30,7 +30,7 @@ export default function KreuzfahrtenPage() {
           {cruises.map((cruise, index) => (
             <motion.div key={cruise.id} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative bg-white border-2 border-[var(--sand)] hover:border-[var(--champagne)] transition-all overflow-hidden">
+              className="group relative bg-white border-2 border-[var(--sand)] hover:border-[var(--champagne)] transition-all overflow-hidden ui-panel">
               <div className="relative h-80 overflow-hidden">
                 <img src={cruise.image} alt={cruise.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 <button onClick={() => toggleFavorite(cruise.id)} className="absolute top-4 right-4 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
@@ -45,7 +45,7 @@ export default function KreuzfahrtenPage() {
                   <div className="flex items-center gap-3 text-[var(--navy)]/70"><Users className="w-5 h-5 text-[var(--champagne)]" /><span>{cruise.passengers}</span></div>
                 </div>
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {cruise.highlights.map((h, i) => <span key={i} className="px-3 py-1 bg-[var(--sand-light)] text-[var(--navy)] text-sm">{h}</span>)}
+                  {cruise.highlights.map((h, i) => <span key={i} className="px-3 py-1 bg-[var(--sand-light)] text-[var(--navy)] text-sm ui-control">{h}</span>)}
                 </div>
                 <div className="flex items-center justify-between">
                   <div>
@@ -53,7 +53,7 @@ export default function KreuzfahrtenPage() {
                     <p className="font-serif text-3xl text-[var(--navy)]">€ {cruise.price.toLocaleString()}</p>
                     <p className="text-sm text-[var(--navy)]/60">per person</p>
                   </div>
-                  <Link href={`/kreuzfahrten/${cruise.id}`} className="px-8 py-3 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors">View Details</Link>
+                  <Link href={`/kreuzfahrten/${cruise.id}`} className="px-8 py-3 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors ui-control">View Details</Link>
                 </div>
               </div>
             </motion.div>

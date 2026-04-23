@@ -4,14 +4,14 @@ import { User, MapPin, Save } from 'lucide-react';
 type ProfileData = { firstName: string; lastName: string; email: string; phone: string; street: string; city: string; postalCode: string; country: string };
 type Props = { formData: ProfileData; setFormData: (d: ProfileData) => void; onSave: () => void };
 
-const inputCls = 'w-full p-4 border-2 border-[var(--sand)] focus:border-[var(--champagne)] focus:outline-none';
+const inputCls = 'w-full p-4 border-2 border-[var(--sand)] focus:border-[var(--champagne)] focus:outline-none ui-control';
 
 export default function PersonalDataTab({ formData, setFormData, onSave }: Props) {
   const up = (field: keyof ProfileData) => (e: React.ChangeEvent<HTMLInputElement>) =>
     setFormData({ ...formData, [field]: e.target.value });
 
   return (
-    <div className="bg-white border-2 border-[var(--sand)] p-10">
+    <div className="bg-white border-2 border-[var(--sand)] p-10 ui-panel">
       <h2 className="font-serif text-2xl text-[var(--navy)] mb-8">Personal Information</h2>
       <div className="space-y-8">
         <div>
@@ -38,7 +38,7 @@ export default function PersonalDataTab({ formData, setFormData, onSave }: Props
             <div><label className="block text-[var(--navy)] font-medium mb-2">Country</label><input type="text" value={formData.country} onChange={up('country')} className={inputCls} /></div>
           </div>
         </div>
-        <button onClick={onSave} className="flex items-center gap-3 px-8 py-4 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors">
+        <button onClick={onSave} className="flex items-center gap-3 px-8 py-4 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors ui-control">
           <Save className="w-5 h-5" /><span>Save Changes</span>
         </button>
       </div>

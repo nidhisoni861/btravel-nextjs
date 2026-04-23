@@ -35,7 +35,7 @@ export default function BlogSectionRenderer({ sections }: Props) {
         if (section.type === 'route') {
           return (
             <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-              className="my-12 bg-gradient-to-br from-[var(--sand-light)] to-white p-8 rounded-lg border-2 border-[var(--sand)]">
+              className="my-12 bg-gradient-to-br from-[var(--sand-light)] to-white p-8 border-2 border-[var(--sand)] ui-panel">
               <h3 className="font-serif text-3xl text-[var(--navy)] mb-8 text-center">Route Plan</h3>
               <div className="space-y-6">
                 {section.stops?.map((stop, i) => (
@@ -61,8 +61,8 @@ export default function BlogSectionRenderer({ sections }: Props) {
         if (section.type === 'routeMap') {
           return (
             <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-              className="my-12 bg-[#e8dfd0] p-8 rounded-lg">
-              <div className="mb-8 bg-white/50 p-8 rounded">
+              className="my-12 bg-[#e8dfd0] p-8 ui-panel">
+              <div className="mb-8 bg-white/50 p-8 ui-card">
                 <div className="flex items-center justify-center gap-4 flex-wrap">
                   {section.routePoints?.map((point, i) => (
                     <div key={i} className="flex items-center">
@@ -86,7 +86,7 @@ export default function BlogSectionRenderer({ sections }: Props) {
                   <p className="text-sm text-[var(--navy)]/60">Ocean Terrace Suite (double occupancy)</p>
                   {section.priceNote && <p className="text-xs text-[var(--navy)]/50 italic">{section.priceNote}</p>}
                 </div>
-                <button className="px-8 py-3 bg-[#34bce1] text-white hover:bg-[#2aa3c7] transition-colors">Inquire Now</button>
+                <button className="px-8 py-3 bg-[#34bce1] text-white hover:bg-[#2aa3c7] transition-colors ui-control">Inquire Now</button>
               </div>
             </motion.div>
           );

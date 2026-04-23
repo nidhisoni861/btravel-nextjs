@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import { CreditCard, Lock } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
-const inputCls = 'w-full p-4 border-2 border-[var(--sand)] focus:border-[var(--champagne)] focus:outline-none';
+const inputCls = 'w-full p-4 border-2 border-[var(--sand)] focus:border-[var(--champagne)] focus:outline-none ui-control';
 
 type FormData = { firstName: string; lastName: string; email: string; phone: string; street: string; city: string; postalCode: string; country: string; cardNumber: string; cardName: string; expiryDate: string; cvv: string };
 const init: FormData = { firstName: '', lastName: '', email: '', phone: '', street: '', city: '', postalCode: '', country: 'Germany', cardNumber: '', cardName: '', expiryDate: '', cvv: '' };
@@ -39,7 +39,7 @@ export default function CheckoutPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {paymentMethods.map((pm) => (
                     <button key={pm.id} type="button" onClick={() => setPaymentMethod(pm.id)}
-                      className={`p-6 border-2 transition-all ${paymentMethod === pm.id ? 'border-[var(--champagne)] bg-[var(--champagne)]/10' : 'border-[var(--sand)] hover:border-[var(--champagne)]'}`}>
+                      className={`p-6 border-2 transition-all ui-card ${paymentMethod === pm.id ? 'border-[var(--champagne)] bg-[var(--champagne)]/10' : 'border-[var(--sand)] hover:border-[var(--champagne)]'}`}>
                       <div className="text-center">
                         {pm.icon ? <CreditCard className="w-8 h-8 mx-auto mb-2 text-[var(--champagne)]" /> : <div className="text-3xl mb-2">{pm.emoji}</div>}
                         <span className="text-[var(--navy)] font-medium">{pm.label}</span>
@@ -82,7 +82,7 @@ export default function CheckoutPage() {
               )}
             </div>
             <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="lg:col-span-1">
-              <div className="bg-[var(--sand-light)] border-2 border-[var(--sand)] p-5 sm:p-8 sticky top-32">
+              <div className="bg-[var(--sand-light)] border-2 border-[var(--sand)] p-5 sm:p-8 sticky top-32 ui-panel">
                 <h2 className="font-serif text-2xl text-[var(--navy)] mb-6">Order Summary</h2>
                 <div className="space-y-4 mb-6">
                   <div className="pb-4 border-b-2 border-[var(--sand)]">
@@ -95,10 +95,10 @@ export default function CheckoutPage() {
                     <div className="flex justify-between font-serif text-2xl text-[var(--navy)]"><span>Total</span><span>€ {cartTotal.toLocaleString()}</span></div>
                   </div>
                 </div>
-                <div className="bg-white border-2 border-[var(--champagne)]/30 p-4 mb-6">
+                <div className="bg-white border-2 border-[var(--champagne)]/30 p-4 mb-6 ui-card">
                   <div className="flex items-start gap-3"><Lock className="w-5 h-5 text-[var(--champagne)] flex-shrink-0 mt-0.5" /><p className="text-sm text-[var(--navy)]/70">Your payment is processed securely via SSL encryption</p></div>
                 </div>
-                <button type="submit" disabled={!paymentMethod} className={`w-full py-4 text-white text-lg transition-colors ${paymentMethod ? 'bg-[var(--champagne)] hover:bg-[var(--champagne)]/90' : 'bg-gray-400 cursor-not-allowed'}`}>Pay Now</button>
+                <button type="submit" disabled={!paymentMethod} className={`w-full py-4 text-white text-lg transition-colors ui-control ${paymentMethod ? 'bg-[var(--champagne)] hover:bg-[var(--champagne)]/90' : 'bg-gray-400 cursor-not-allowed'}`}>Pay Now</button>
                 <p className="text-xs text-[var(--navy)]/60 text-center mt-4">By submitting you confirm our Terms and Privacy Policy</p>
               </div>
             </motion.div>

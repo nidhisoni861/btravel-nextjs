@@ -33,7 +33,7 @@ export default function Step2Vibe({ formData, updateFormData, nextStep, prevStep
           const isSelected = formData.vibe.includes(vibe.value);
           return (
             <motion.button key={vibe.value} onClick={() => handleToggle(vibe.value)}
-              className={`relative overflow-hidden border-2 transition-all hover:border-[var(--champagne)] hover:shadow-lg group ${isSelected ? 'border-[var(--champagne)]' : 'border-[var(--sand)]'}`}
+              className={`relative overflow-hidden border-2 transition-all hover:border-[var(--champagne)] hover:shadow-lg group ui-card ${isSelected ? 'border-[var(--champagne)]' : 'border-[var(--sand)]'}`}
               whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <div className="relative h-28 overflow-hidden">
                 <img src={vibe.image} alt={vibe.label} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -45,9 +45,9 @@ export default function Step2Vibe({ formData, updateFormData, nextStep, prevStep
         })}
       </div>
       <div className="flex gap-4">
-        <button onClick={prevStep} className="px-8 py-3 border-2 border-[var(--navy)] text-[var(--navy)] hover:bg-[var(--navy)] hover:text-white transition-colors">Back</button>
+        <button onClick={prevStep} className="px-8 py-3 border-2 border-[var(--navy)] text-[var(--navy)] hover:bg-[var(--navy)] hover:text-white transition-colors ui-control">Back</button>
         <button onClick={nextStep} disabled={formData.vibe.length === 0}
-          className="flex-1 px-8 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">Next</button>
+          className="flex-1 px-8 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ui-control">Next</button>
       </div>
     </motion.div>
   );

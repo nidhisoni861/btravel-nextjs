@@ -16,7 +16,7 @@ export default function BlogPostDetail({ post, onClose }: Props) {
       <div className="min-h-screen flex items-center justify-center p-4 py-12">
         <motion.article initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }} transition={{ duration: 0.3 }}
-          className="bg-white w-full max-w-4xl shadow-2xl relative" onClick={(e) => e.stopPropagation()}>
+          className="bg-white w-full max-w-4xl shadow-2xl relative ui-panel" onClick={(e) => e.stopPropagation()}>
           <button onClick={onClose} className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-colors">
             <X className="w-5 h-5 text-[var(--navy)]" />
           </button>
@@ -35,7 +35,7 @@ export default function BlogPostDetail({ post, onClose }: Props) {
             <div className="border-t-2 border-[var(--sand)] pt-8 mt-12">
               <div className="text-center">
                 <p className="text-[var(--navy)]/70 mb-6">Interested in a similar trip?</p>
-                <button className="px-8 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors">Inquire Now</button>
+                <button className="px-8 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors ui-control">Inquire Now</button>
               </div>
             </div>
           </div>

@@ -26,8 +26,8 @@ export default function TravelBlog() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
           {blogPosts.map((post, index) => (
             <motion.article key={post.id} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }} className="group cursor-pointer" onClick={() => setSelectedPost(post)}>
-              <div className="overflow-hidden mb-4 sm:mb-6">
+              transition={{ duration: 0.6, delay: index * 0.1 }} className="group cursor-pointer bg-white border border-[var(--sand)]/80 p-5 sm:p-6 shadow-sm hover:shadow-md transition-all ui-panel" onClick={() => setSelectedPost(post)}>
+              <div className="overflow-hidden mb-4 sm:mb-6 ui-card">
                 <img src={post.image} alt={post.title} className="w-full h-[200px] sm:h-[280px] md:h-[350px] lg:h-[400px] object-cover transition-transform duration-500 group-hover:scale-105" />
               </div>
               <div className="flex items-center gap-6 text-sm text-[var(--navy)]/60 mb-4">

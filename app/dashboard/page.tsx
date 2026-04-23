@@ -32,15 +32,15 @@ export default function DashboardPage() {
               <h2 className="font-serif text-3xl text-[var(--navy)] mb-6">Your Trips</h2>
               <div className="space-y-6">
                 {upcomingTrips.map((trip) => (
-                  <div key={trip.id} className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow group cursor-pointer">
+                  <div key={trip.id} className="bg-white p-6 shadow-lg hover:shadow-xl transition-shadow group cursor-pointer ui-panel">
                     <div className="flex gap-6">
-                      <div className="w-48 h-32 flex-shrink-0 overflow-hidden">
+                      <div className="w-48 h-32 flex-shrink-0 overflow-hidden ui-card">
                         <img src={trip.image} alt={trip.destination} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                       </div>
                       <div className="flex-1">
                         <div className="flex items-start justify-between mb-3">
                           <h3 className="font-serif text-xl text-[var(--navy)] group-hover:text-[var(--champagne)] transition-colors">{trip.destination}</h3>
-                          <span className={`px-3 py-1 text-xs ${trip.status === 'Confirmed' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}`}>{trip.status}</span>
+                          <span className={`px-3 py-1 text-xs ui-control ${trip.status === 'Confirmed' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}`}>{trip.status}</span>
                         </div>
                         <div className="space-y-2 text-sm text-[var(--navy)]/70">
                           <div className="flex items-center gap-2"><Calendar className="w-4 h-4" />{trip.dates}</div>
@@ -55,13 +55,13 @@ export default function DashboardPage() {
                 ))}
               </div>
               <Link href="/booking">
-                <motion.button className="mt-6 w-full py-4 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors"
+                <motion.button className="mt-6 w-full py-4 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors ui-control"
                   whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>Plan New Trip</motion.button>
               </Link>
             </motion.div>
           </div>
           <div className="space-y-8">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="bg-white p-6 shadow-lg">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="bg-white p-6 shadow-lg ui-panel">
               <h3 className="font-serif text-xl text-[var(--navy)] mb-6">Recent Activity</h3>
               <div className="space-y-4">
                 {recentActivity.map((activity, i) => (
@@ -73,11 +73,11 @@ export default function DashboardPage() {
                 ))}
               </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="bg-white p-6 shadow-lg">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="bg-white p-6 shadow-lg ui-panel">
               <h3 className="font-serif text-xl text-[var(--navy)] mb-6">Quick Access</h3>
               <div className="space-y-3">
                 {['Download documents', 'Contact travel advisor', 'Payment history'].map((label) => (
-                  <button key={label} className="w-full p-3 border-2 border-[var(--sand)] hover:border-[var(--champagne)] transition-colors text-left text-sm text-[var(--navy)]">{label}</button>
+                  <button key={label} className="w-full p-3 border-2 border-[var(--sand)] hover:border-[var(--champagne)] transition-colors text-left text-sm text-[var(--navy)] ui-control">{label}</button>
                 ))}
               </div>
             </motion.div>

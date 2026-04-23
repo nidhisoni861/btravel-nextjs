@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { UserPlus, User, MapPin, Lock } from 'lucide-react';
 
-const inputCls = 'w-full p-4 border-2 border-[var(--sand)] focus:border-[var(--champagne)] focus:outline-none';
+const inputCls = 'w-full p-4 border-2 border-[var(--sand)] focus:border-[var(--champagne)] focus:outline-none ui-control';
 type FormData = { firstName: string; lastName: string; email: string; phone: string; street: string; city: string; postalCode: string; password: string; confirmPassword: string; newsletter: boolean; terms: boolean };
 const init: FormData = { firstName: '', lastName: '', email: '', phone: '', street: '', city: '', postalCode: '', password: '', confirmPassword: '', newsletter: false, terms: false };
 
@@ -36,7 +36,7 @@ export default function RegistrierungPage() {
           <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4"><UserPlus className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--champagne)]" /><h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[var(--navy)]">Registration</h1></div>
           <p className="text-[var(--navy)]/70 text-base sm:text-lg">Create your BeTravel customer account</p>
         </motion.div>
-        <motion.form initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} onSubmit={handleSubmit} className="bg-white border-2 border-[var(--sand)] p-5 sm:p-8 md:p-10">
+        <motion.form initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} onSubmit={handleSubmit} className="bg-white border-2 border-[var(--sand)] p-5 sm:p-8 md:p-10 ui-panel">
           <div className="mb-8 sm:mb-10 pb-8 sm:pb-10 border-b-2 border-[var(--sand)]">
             <div className="flex items-center gap-3 mb-5 sm:mb-6"><User className="w-6 h-6 text-[var(--champagne)]" /><h2 className="font-serif text-xl sm:text-2xl text-[var(--navy)]">Personal Information</h2></div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
@@ -79,7 +79,7 @@ export default function RegistrierungPage() {
               <span className="text-[var(--navy)]/70">I accept the <a href="#" className="text-[var(--champagne)] underline">Terms</a> and <a href="#" className="text-[var(--champagne)] underline">Privacy Policy</a> *</span>
             </label>
           </div>
-          <button type="submit" className="w-full py-4 bg-[var(--champagne)] text-white text-lg hover:bg-[var(--champagne)]/90 transition-colors mb-8">Sign Up Now</button>
+          <button type="submit" className="w-full py-4 bg-[var(--champagne)] text-white text-lg hover:bg-[var(--champagne)]/90 transition-colors mb-8 ui-control">Sign Up Now</button>
           <div className="relative mb-8">
             <div className="absolute inset-0 flex items-center"><div className="w-full border-t-2 border-[var(--sand)]" /></div>
             <div className="relative flex justify-center"><span className="px-4 bg-white text-[var(--navy)]/60 text-sm">OR</span></div>
@@ -88,7 +88,7 @@ export default function RegistrierungPage() {
             <p className="text-center text-[var(--navy)] font-medium mb-6">Or sign up with</p>
             <div className="grid grid-cols-2 gap-4">
               {socialReg.map((btn) => (
-                <button key={btn.label} type="button" onClick={btn.fn} className={`flex items-center justify-center gap-3 px-4 py-3 border-2 border-[var(--sand)] ${btn.cls} transition-all`}>
+                <button key={btn.label} type="button" onClick={btn.fn} className={`flex items-center justify-center gap-3 px-4 py-3 border-2 border-[var(--sand)] ${btn.cls} transition-all ui-control`}>
                   {btn.icon}<span className="text-[var(--navy)] text-sm hidden sm:inline">{btn.label}</span>
                 </button>
               ))}

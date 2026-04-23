@@ -24,7 +24,7 @@ export default function OfferDetails({ offer, onClose }: Props) {
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
       className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={onClose}>
       <motion.div initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 20 }}
-        transition={{ duration: 0.3 }} className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl" onClick={(e) => e.stopPropagation()}>
+        transition={{ duration: 0.3 }} className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl ui-panel" onClick={(e) => e.stopPropagation()}>
         <div className="relative">
           <img src={offer.image} alt={offer.title} className="w-full h-72 object-cover" />
           <button onClick={onClose} className="absolute top-4 right-4 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-colors">
@@ -48,7 +48,7 @@ export default function OfferDetails({ offer, onClose }: Props) {
             <h3 className="font-serif text-2xl text-[var(--navy)] mb-4">Ship & Cabin</h3>
             <div className="grid grid-cols-3 gap-4">
               {shipImages.map((image, index) => (
-                <div key={index} className="relative overflow-hidden aspect-[4/3] group">
+                <div key={index} className="relative overflow-hidden aspect-[4/3] group ui-card">
                   <img src={image} alt={`Gallery ${index + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
               ))}
@@ -73,8 +73,8 @@ export default function OfferDetails({ offer, onClose }: Props) {
                 <p className="text-[var(--navy)]/60 text-sm">per person</p>
               </div>
               <div className="flex gap-3">
-                <button className="px-8 py-3 border-2 border-[var(--navy)] text-[var(--navy)] hover:bg-[var(--navy)] hover:text-white transition-colors">More Info</button>
-                <button className="px-8 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors">Book Now</button>
+                <button className="px-8 py-3 border-2 border-[var(--navy)] text-[var(--navy)] hover:bg-[var(--navy)] hover:text-white transition-colors ui-control">More Info</button>
+                <button className="px-8 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors ui-control">Book Now</button>
               </div>
             </div>
           </div>

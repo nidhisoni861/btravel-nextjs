@@ -21,7 +21,7 @@ export default function CruiseDetailContent({ description, highlights, route, in
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
         <h2 className="font-serif text-3xl text-[var(--navy)] mb-6">Highlights</h2>
         <div className="flex flex-wrap gap-3">
-          {highlights.map((h, i) => <span key={i} className="px-4 py-2 bg-[var(--champagne)]/10 border-2 border-[var(--champagne)] text-[var(--navy)] font-medium">{h}</span>)}
+          {highlights.map((h, i) => <span key={i} className="px-4 py-2 bg-[var(--champagne)]/10 border-2 border-[var(--champagne)] text-[var(--navy)] font-medium ui-control">{h}</span>)}
         </div>
       </motion.div>
 
@@ -29,9 +29,9 @@ export default function CruiseDetailContent({ description, highlights, route, in
         <h2 className="font-serif text-3xl text-[var(--navy)] mb-6">Itinerary</h2>
         <div className="space-y-4">
           {route.map((stop, i) => (
-            <div key={i} className="flex gap-4 p-6 bg-[var(--sand-light)] border-2 border-[var(--sand)] hover:border-[var(--champagne)] transition-colors">
+            <div key={i} className="flex gap-4 p-6 bg-[var(--sand-light)] border-2 border-[var(--sand)] hover:border-[var(--champagne)] transition-colors ui-card">
               <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-[var(--champagne)] text-white flex items-center justify-center font-serif text-xl">{stop.day}</div>
+                <div className="w-12 h-12 bg-[var(--champagne)] text-white flex items-center justify-center font-serif text-xl ui-control">{stop.day}</div>
               </div>
               <div>
                 <h3 className="font-serif text-xl text-[var(--navy)] mb-1">{stop.port}</h3>

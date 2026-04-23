@@ -33,7 +33,7 @@ export default function MobileMenu({ isLoggedIn, user, onClose, onLogout, onLogi
         <nav className="flex flex-col gap-2 mb-8">
           {navLinks.map((link) => (
             <Link key={link.path} href={link.path} onClick={onClose}
-              className={`flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium transition-colors ${pathname === link.path ? 'bg-[var(--champagne)]/10 text-[var(--champagne)]' : 'text-[var(--navy)] hover:bg-[var(--sand-light)]'}`}>
+              className={`flex items-center gap-3 px-4 py-3 text-base font-medium transition-colors ui-control ${pathname === link.path ? 'bg-[var(--champagne)]/10 text-[var(--champagne)]' : 'text-[var(--navy)] hover:bg-[var(--sand-light)]'}`}>
               <link.icon className="w-5 h-5" />
               {link.label}
             </Link>
@@ -44,16 +44,16 @@ export default function MobileMenu({ isLoggedIn, user, onClose, onLogout, onLogi
             <div className="mb-8 pb-8 border-b border-[var(--sand)]">
               <h3 className="text-xs font-semibold text-[var(--navy)]/60 uppercase tracking-wider mb-3 px-4">Schnellzugriff</h3>
               <div className="flex flex-col gap-2">
-                <Link href="/meine-reisen" onClick={onClose} className="flex items-center gap-3 px-4 py-3 text-[var(--navy)] hover:bg-[var(--sand-light)] rounded-lg transition-colors">
+                <Link href="/meine-reisen" onClick={onClose} className="flex items-center gap-3 px-4 py-3 text-[var(--navy)] hover:bg-[var(--sand-light)] transition-colors ui-control">
                   <Heart className="w-5 h-5 text-[var(--champagne)]" /><span className="text-sm font-medium">Meine Reisen</span>
                 </Link>
-                <Link href="/warenkorb" onClick={onClose} className="flex items-center gap-3 px-4 py-3 text-[var(--navy)] hover:bg-[var(--sand-light)] rounded-lg transition-colors">
+                <Link href="/warenkorb" onClick={onClose} className="flex items-center gap-3 px-4 py-3 text-[var(--navy)] hover:bg-[var(--sand-light)] transition-colors ui-control">
                   <ShoppingCart className="w-5 h-5 text-[var(--champagne)]" /><span className="text-sm font-medium">Warenkorb</span>
                 </Link>
               </div>
             </div>
             <div className="mb-8">
-              <div className="flex items-center gap-4 px-4 py-4 bg-gradient-to-r from-[var(--champagne)]/10 to-transparent rounded-lg mb-4">
+              <div className="flex items-center gap-4 px-4 py-4 bg-gradient-to-r from-[var(--champagne)]/10 to-transparent mb-4 ui-card">
                 <div className="w-12 h-12 rounded-full border-2 border-[var(--champagne)] overflow-hidden flex-shrink-0">
                   <img src={user.avatar} alt={user.firstName} className="w-full h-full object-cover" />
                 </div>
@@ -64,16 +64,16 @@ export default function MobileMenu({ isLoggedIn, user, onClose, onLogout, onLogi
               </div>
               <div className="flex flex-col gap-2">
                 {[{ href: '/profil', icon: User, label: 'Mein Profil' }, { href: '/dokumente', icon: FileText, label: 'Dokumente' }, { href: '/profil', icon: Settings, label: 'Einstellungen' }].map(({ href, icon: Icon, label }) => (
-                  <Link key={label} href={href} onClick={onClose} className="flex items-center gap-3 px-4 py-3 text-[var(--navy)] hover:bg-[var(--sand-light)] rounded-lg transition-colors">
+                  <Link key={label} href={href} onClick={onClose} className="flex items-center gap-3 px-4 py-3 text-[var(--navy)] hover:bg-[var(--sand-light)] transition-colors ui-control">
                     <Icon className="w-5 h-5 text-[var(--champagne)]" /><span className="text-sm font-medium">{label}</span>
                   </Link>
                 ))}
-                <button onClick={() => { onLogout(); onClose(); }} className="flex items-center gap-3 px-4 py-3 text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                <button onClick={() => { onLogout(); onClose(); }} className="flex items-center gap-3 px-4 py-3 text-red-600 hover:bg-red-50 transition-colors ui-control">
                   <LogOut className="w-5 h-5" /><span className="text-sm font-medium">Abmelden</span>
                 </button>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-[var(--champagne)]/5 to-transparent rounded-xl p-6 border border-[var(--sand)]">
+            <div className="bg-gradient-to-br from-[var(--champagne)]/5 to-transparent p-6 border border-[var(--sand)] ui-card">
               <div className="flex items-start gap-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-[var(--champagne)]/10 flex items-center justify-center flex-shrink-0">
                   <HelpCircle className="w-5 h-5 text-[var(--champagne)]" />
@@ -84,11 +84,11 @@ export default function MobileMenu({ isLoggedIn, user, onClose, onLogout, onLogi
                 </div>
               </div>
               <div className="space-y-3">
-                <a href="tel:+497111234567" className="flex items-center gap-3 px-4 py-3 bg-white rounded-lg hover:bg-[var(--champagne)]/5 transition-colors border border-[var(--sand)]">
+                <a href="tel:+497111234567" className="flex items-center gap-3 px-4 py-3 bg-white hover:bg-[var(--champagne)]/5 transition-colors border border-[var(--sand)] ui-control">
                   <Phone className="w-5 h-5 text-[var(--champagne)]" />
                   <div><p className="text-xs text-[var(--navy)]/60">Telefon</p><p className="text-sm font-semibold text-[var(--navy)]">+49 711 123 456 7</p></div>
                 </a>
-                <a href="mailto:info@betravel.de" className="flex items-center gap-3 px-4 py-3 bg-white rounded-lg hover:bg-[var(--champagne)]/5 transition-colors border border-[var(--sand)]">
+                <a href="mailto:info@betravel.de" className="flex items-center gap-3 px-4 py-3 bg-white hover:bg-[var(--champagne)]/5 transition-colors border border-[var(--sand)] ui-control">
                   <Mail className="w-5 h-5 text-[var(--champagne)]" />
                   <div><p className="text-xs text-[var(--navy)]/60">E-Mail</p><p className="text-sm font-semibold text-[var(--navy)]">info@betravel.de</p></div>
                 </a>
@@ -98,8 +98,8 @@ export default function MobileMenu({ isLoggedIn, user, onClose, onLogout, onLogi
         )}
         {!isLoggedIn && (
           <div className="flex flex-col gap-3">
-            <Link href="/registrierung" onClick={onClose} className="w-full py-3 border-2 border-[var(--sand)] text-[var(--navy)] text-center rounded-lg font-medium hover:border-[var(--champagne)] transition-colors">Registrieren</Link>
-            <button onClick={() => { onLogin(); onClose(); }} className="w-full py-3 bg-[var(--champagne)] text-white rounded-lg font-semibold hover:bg-[var(--champagne)]/90 transition-colors">Anmelden</button>
+            <Link href="/registrierung" onClick={onClose} className="w-full py-3 border-2 border-[var(--sand)] text-[var(--navy)] text-center font-medium hover:border-[var(--champagne)] transition-colors ui-control">Registrieren</Link>
+            <button onClick={() => { onLogin(); onClose(); }} className="w-full py-3 bg-[var(--champagne)] text-white font-semibold hover:bg-[var(--champagne)]/90 transition-colors ui-control">Anmelden</button>
           </div>
         )}
       </div>

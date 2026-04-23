@@ -22,7 +22,7 @@ export default function SubmitSuccess() {
 
   return (
     <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }}
-      className="bg-white/95 backdrop-blur-sm p-12 shadow-2xl text-center">
+      className="bg-white/95 backdrop-blur-sm p-12 shadow-2xl text-center ui-panel">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
         <h2 className="font-serif text-3xl text-[var(--navy)] mb-3">Thank you, Ms. Customer</h2>
         <p className="text-[var(--navy)]/70 mb-10 max-w-xl mx-auto">Your personal travel expert from Euro Lloyd<br />will contact you within 24 hours</p>
@@ -37,7 +37,7 @@ export default function SubmitSuccess() {
           <p className="text-[var(--navy)]/70 mb-4">Contact us directly:</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {contactMethods.map(({ icon: Icon, label }) => (
-              <button key={label} className="flex flex-col items-center gap-3 p-6 bg-white border-2 border-[var(--sand)] hover:border-[var(--champagne)] hover:bg-[var(--champagne)]/5 transition-all">
+              <button key={label} className="flex flex-col items-center gap-3 p-6 bg-white border-2 border-[var(--sand)] hover:border-[var(--champagne)] hover:bg-[var(--champagne)]/5 transition-all ui-card">
                 <Icon className="w-8 h-8 text-[var(--champagne)]" />
                 <span className="text-sm text-[var(--navy)]">{label}</span>
               </button>
@@ -51,7 +51,7 @@ export default function SubmitSuccess() {
             {offers.map((offer, index) => (
               <motion.div key={offer.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }} className="group cursor-pointer" onClick={() => setSelectedOffer(offer)}>
-                <div className="relative overflow-hidden mb-3 aspect-[4/3]">
+                <div className="relative overflow-hidden mb-3 aspect-[4/3] ui-card">
                   <img src={offer.image} alt={offer.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity">View Details</span>
@@ -62,7 +62,7 @@ export default function SubmitSuccess() {
               </motion.div>
             ))}
           </div>
-          <button className="px-8 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors">Discover More Offers</button>
+          <button className="px-8 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors ui-control">Discover More Offers</button>
         </motion.div>
       </motion.div>
       <AnimatePresence>

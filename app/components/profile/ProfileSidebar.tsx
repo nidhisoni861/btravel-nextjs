@@ -18,13 +18,13 @@ const tabs: { id: Tab; label: string; Icon: typeof User }[] = [
 
 export default function ProfileSidebar({ activeTab, setActiveTab, firstName, lastName, email }: Props) {
   return (
-    <div className="bg-white border-2 border-[var(--sand)] p-6">
+    <div className="bg-white border-2 border-[var(--sand)] p-6 ui-panel">
       <nav className="space-y-2">
         {tabs.map(({ id, label, Icon }) => (
           <button
             key={id}
             onClick={() => setActiveTab(id)}
-            className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-all ${
+            className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-all ui-control ${
               activeTab === id ? 'bg-[var(--champagne)] text-white' : 'text-[var(--navy)] hover:bg-[var(--sand-light)]'
             }`}
           >

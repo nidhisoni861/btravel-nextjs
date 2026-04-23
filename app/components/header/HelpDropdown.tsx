@@ -14,7 +14,7 @@ export default function HelpDropdown({ show, onToggle, dropdownRef, textColor }:
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={onToggle}
-        className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${textColor} hover:text-[var(--champagne)] hover:bg-[var(--champagne)]/5`}
+        className={`flex items-center gap-2 px-3 py-2 transition-all ui-control ${textColor} hover:text-[var(--champagne)] hover:bg-[var(--champagne)]/5`}
       >
         <HelpCircle className="w-5 h-5" />
         <ChevronDown className={`w-4 h-4 transition-transform ${show ? 'rotate-180' : ''}`} />
@@ -26,7 +26,7 @@ export default function HelpDropdown({ show, onToggle, dropdownRef, textColor }:
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute right-0 mt-3 w-80 bg-white rounded-xl shadow-2xl border border-[var(--sand)] overflow-hidden"
+            className="absolute right-0 mt-3 w-80 bg-white shadow-2xl border border-[var(--sand)] overflow-hidden ui-card"
           >
             <div className="p-6">
               <div className="flex items-start gap-3 mb-5">
@@ -39,7 +39,7 @@ export default function HelpDropdown({ show, onToggle, dropdownRef, textColor }:
                 </div>
               </div>
               <div className="space-y-2 mb-5">
-                <a href="tel:+497111234567" className="flex items-center gap-3 p-3 rounded-lg hover:bg-[var(--champagne)]/5 transition-colors group">
+                <a href="tel:+497111234567" className="flex items-center gap-3 p-3 hover:bg-[var(--champagne)]/5 transition-colors group ui-control">
                   <div className="w-10 h-10 rounded-full bg-[var(--champagne)]/10 flex items-center justify-center">
                     <Phone className="w-5 h-5 text-[var(--champagne)]" />
                   </div>
@@ -48,7 +48,7 @@ export default function HelpDropdown({ show, onToggle, dropdownRef, textColor }:
                     <p className="text-sm font-semibold text-[var(--navy)] group-hover:text-[var(--champagne)] transition-colors">+49 711 123 456 7</p>
                   </div>
                 </a>
-                <a href="mailto:info@betravel.de" className="flex items-center gap-3 p-3 rounded-lg hover:bg-[var(--champagne)]/5 transition-colors group">
+                <a href="mailto:info@betravel.de" className="flex items-center gap-3 p-3 hover:bg-[var(--champagne)]/5 transition-colors group ui-control">
                   <div className="w-10 h-10 rounded-full bg-[var(--champagne)]/10 flex items-center justify-center">
                     <Mail className="w-5 h-5 text-[var(--champagne)]" />
                   </div>
@@ -60,7 +60,7 @@ export default function HelpDropdown({ show, onToggle, dropdownRef, textColor }:
               </div>
               <div className="pt-4 border-t border-[var(--sand)]">
                 <p className="text-xs text-[var(--navy)]/60 mb-3">Buchen Sie Ihren Urlaub schnell und einfach per Telefon</p>
-                <a href="tel:+497111234567" className="block w-full px-4 py-2.5 bg-[var(--champagne)] text-white text-center text-sm font-semibold rounded-lg hover:bg-[var(--champagne)]/90 transition-colors">
+                <a href="tel:+497111234567" className="block w-full px-4 py-2.5 bg-[var(--champagne)] text-white text-center text-sm font-semibold hover:bg-[var(--champagne)]/90 transition-colors ui-control">
                   Jetzt anrufen
                 </a>
               </div>

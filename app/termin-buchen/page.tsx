@@ -30,7 +30,7 @@ export default function TerminBuchenPage() {
           <p className="text-[var(--navy)]/70 text-base sm:text-lg">Let our travel experts advise you personally</p>
         </motion.div>
         <motion.form initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
-          onSubmit={handleSubmit} className="bg-white border-2 border-[var(--sand)] p-5 sm:p-8 md:p-10">
+          onSubmit={handleSubmit} className="bg-white border-2 border-[var(--sand)] p-5 sm:p-8 md:p-10 ui-panel">
           <div className="mb-8 sm:mb-10">
             <label className="block text-[var(--navy)] font-medium mb-4">How would you like to be consulted?</label>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
@@ -38,7 +38,7 @@ export default function TerminBuchenPage() {
                 const Icon = type.icon;
                 return (
                   <button key={type.id} type="button" onClick={() => setConsultationType(type.id)}
-                    className={`p-6 border-2 transition-all ${consultationType === type.id ? 'border-[var(--champagne)] bg-[var(--champagne)]/10' : 'border-[var(--sand)] hover:border-[var(--champagne)]'}`}>
+                    className={`p-6 border-2 transition-all ui-card ${consultationType === type.id ? 'border-[var(--champagne)] bg-[var(--champagne)]/10' : 'border-[var(--sand)] hover:border-[var(--champagne)]'}`}>
                     <Icon className="w-8 h-8 mx-auto mb-3 text-[var(--champagne)]" />
                     <span className="text-sm text-[var(--navy)]">{type.label}</span>
                   </button>
@@ -56,7 +56,7 @@ export default function TerminBuchenPage() {
             <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
               {timeSlots.map((time) => (
                 <button key={time} type="button" onClick={() => setSelectedTime(time)}
-                  className={`p-3 border-2 transition-all ${selectedTime === time ? 'border-[var(--champagne)] bg-[var(--champagne)] text-white' : 'border-[var(--sand)] hover:border-[var(--champagne)]'}`}>
+                  className={`p-3 border-2 transition-all ui-control ${selectedTime === time ? 'border-[var(--champagne)] bg-[var(--champagne)] text-white' : 'border-[var(--sand)] hover:border-[var(--champagne)]'}`}>
                   {time}
                 </button>
               ))}
@@ -85,7 +85,7 @@ export default function TerminBuchenPage() {
               className="w-full p-4 border-2 border-[var(--sand)] focus:border-[var(--champagne)] focus:outline-none resize-none"
               placeholder="Tell us what you're interested in..." />
           </div>
-          <button type="submit" className="w-full py-4 bg-[var(--champagne)] text-white text-lg hover:bg-[var(--champagne)]/90 transition-colors">
+          <button type="submit" className="w-full py-4 bg-[var(--champagne)] text-white text-lg hover:bg-[var(--champagne)]/90 transition-colors ui-control">
             Confirm Appointment
           </button>
         </motion.form>

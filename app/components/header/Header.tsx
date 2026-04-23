@@ -60,7 +60,7 @@ export default function Header() {
               {isLoggedIn && (
                 <>
                   <HelpDropdown show={showHelpDropdown} onToggle={() => { setShowHelpDropdown(!showHelpDropdown); setShowProfileDropdown(false); }} dropdownRef={helpRef} textColor={textColor} />
-                  <Link href="/meine-reisen" className={`relative flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${pathname === '/meine-reisen' ? 'text-[var(--champagne)] bg-[var(--champagne)]/10' : `${textColor} hover:text-[var(--champagne)] hover:bg-[var(--champagne)]/5`}`} title="Favorites">
+                  <Link href="/meine-reisen" className={`relative flex items-center gap-2 px-3 py-2 transition-all ui-control ${pathname === '/meine-reisen' ? 'text-[var(--champagne)] bg-[var(--champagne)]/10' : `${textColor} hover:text-[var(--champagne)] hover:bg-[var(--champagne)]/5`}`} title="Favorites">
                     <Heart className={`w-5 h-5 ${pathname === '/meine-reisen' ? 'fill-[var(--champagne)]' : ''}`} />
                   </Link>
                   <ProfileDropdown user={user} show={showProfileDropdown} onToggle={() => { setShowProfileDropdown(!showProfileDropdown); setShowHelpDropdown(false); }} onClose={() => setShowProfileDropdown(false)} dropdownRef={profileRef} textColor={textColor} onLogout={handleLogout} />
@@ -69,11 +69,11 @@ export default function Header() {
               {!isLoggedIn && (
                 <div className="flex items-center gap-3">
                   <Link href="/registrierung" className={`text-sm font-medium transition-colors ${textColor} hover:text-[var(--champagne)]`}>Registrieren</Link>
-                  <button onClick={() => setIsLoggedIn(true)} className="px-5 py-2 bg-[var(--champagne)] text-white text-sm font-semibold rounded-lg hover:bg-[var(--champagne)]/90 transition-all hover:shadow-lg">Anmelden</button>
+                  <button onClick={() => setIsLoggedIn(true)} className="px-5 py-2 bg-[var(--champagne)] text-white text-sm font-semibold hover:bg-[var(--champagne)]/90 transition-all hover:shadow-lg ui-control">Anmelden</button>
                 </div>
               )}
             </div>
-            <button onClick={() => setShowMobileMenu(!showMobileMenu)} className={`lg:hidden w-10 h-10 flex items-center justify-center rounded-lg ${textColor} hover:bg-[var(--champagne)]/5 transition-colors`}>
+            <button onClick={() => setShowMobileMenu(!showMobileMenu)} className={`lg:hidden w-10 h-10 flex items-center justify-center ${textColor} hover:bg-[var(--champagne)]/5 transition-colors ui-control`}>
               {showMobileMenu ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>

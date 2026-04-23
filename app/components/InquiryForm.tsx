@@ -45,7 +45,7 @@ export default function InquiryForm() {
 
   return (
     <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.4 }}
-      className="bg-white/95 backdrop-blur-sm p-5 sm:p-8 md:p-12 shadow-lg sm:shadow-2xl">
+      className="bg-white/95 backdrop-blur-sm p-5 sm:p-8 md:p-12 shadow-lg sm:shadow-2xl ui-panel">
       <div className="flex items-center justify-between mb-6 sm:mb-12">
         {[1, 2, 3, 4, 5].map((step) => (
           <div key={step} className="flex items-center flex-1 min-w-0">

@@ -38,6 +38,9 @@
   --font-weight-normal: 400;
   --ring: #34bce1;
   --radius: 0.625rem;
+  --radius-control: 0.75rem;
+  --radius-card: 1rem;
+  --radius-panel: 1.5rem;
   --sidebar: #0f1729;
   --sidebar-foreground: #ffffff;
   --sidebar-primary: #34bce1;
@@ -82,8 +85,21 @@
   h3 { font-family: var(--font-serif); font-size: var(--text-lg); font-weight: var(--font-weight-medium); line-height: 1.5; }
   h4 { font-family: var(--font-serif); font-size: var(--text-base); font-weight: var(--font-weight-medium); line-height: 1.5; }
   label { font-size: var(--text-base); font-weight: var(--font-weight-medium); line-height: 1.5; }
-  button { font-size: var(--text-base); font-weight: var(--font-weight-medium); line-height: 1.5; }
-  input { font-size: var(--text-base); font-weight: var(--font-weight-normal); line-height: 1.5; }
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    border-radius: var(--radius-control);
+  }
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+    border-radius: var(--radius-control);
+  }
+  textarea, select {
+    border-radius: var(--radius-control);
+  }
 
   .rdp {
     --rdp-accent-color: var(--champagne);
@@ -95,16 +111,22 @@
   .rdp-caption { position: relative; display: flex; justify-content: center; align-items: center; margin-bottom: 1rem; }
   .rdp-caption_label { font-family: var(--font-serif); font-size: 1.125rem; color: var(--navy); }
   .rdp-nav { position: absolute; right: 0; display: flex; gap: 0.5rem; }
-  .rdp-nav_button { width: 2rem; height: 2rem; border-radius: 0; border: 1px solid var(--sand); background: white; color: var(--navy); cursor: pointer; transition: all 0.2s; }
+  .rdp-nav_button { width: 2rem; height: 2rem; border-radius: var(--radius-control); border: 1px solid var(--sand); background: white; color: var(--navy); cursor: pointer; transition: all 0.2s; }
   .rdp-nav_button:hover { border-color: var(--champagne); color: var(--champagne); }
   .rdp-table { width: 100%; border-collapse: collapse; }
   .rdp-head_cell { color: var(--navy); opacity: 0.6; font-size: 0.875rem; padding: 0.5rem; text-align: center; }
   .rdp-cell { padding: 0.25rem; }
-  .rdp-day { width: 2.5rem; height: 2.5rem; border: 1px solid transparent; background: transparent; color: var(--navy); cursor: pointer; transition: all 0.2s; font-size: 0.875rem; }
+  .rdp-day { width: 2.5rem; height: 2.5rem; border: 1px solid transparent; border-radius: var(--radius-control); background: transparent; color: var(--navy); cursor: pointer; transition: all 0.2s; font-size: 0.875rem; }
   .rdp-day:hover:not([disabled]):not(.rdp-day_selected) { background-color: var(--sand); border-color: var(--sand); }
   .rdp-day_selected { background-color: var(--champagne) !important; color: var(--navy) !important; border-color: var(--champagne) !important; }
   .rdp-day_today { font-weight: 600; color: var(--champagne); }
   .rdp-day_outside { opacity: 0.3; }
   .rdp-day_disabled { opacity: 0.3; cursor: not-allowed; }
   .rdp-day_range_middle { background-color: var(--sand-light); }
+}
+
+@layer components {
+  .ui-control { border-radius: var(--radius-control); }
+  .ui-card { border-radius: var(--radius-card); }
+  .ui-panel { border-radius: var(--radius-panel); }
 }

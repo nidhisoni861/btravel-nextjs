@@ -67,7 +67,7 @@ export default function Welcome() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.6 }}
-              className="space-y-8 bg-white/10 backdrop-blur-md rounded-3xl p-8 sm:p-10 lg:p-12 border border-white/20 shadow-2xl"
+              className="space-y-8 bg-white/10 backdrop-blur-md p-8 sm:p-10 lg:p-12 border border-white/20 shadow-2xl ui-panel"
             >
               <div className="space-y-6">
                 <p
@@ -123,7 +123,7 @@ export default function Welcome() {
               {/* CTA Button */}
               <motion.button
                 onClick={() => router.push("/reisen-finden")}
-                className="group relative w-full sm:w-auto overflow-hidden rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 px-10 py-5 shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500"
+                className="group relative w-full sm:w-auto overflow-hidden bg-gradient-to-r from-emerald-500 to-teal-500 px-10 py-5 shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 ui-panel"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 style={{ fontFamily: "Poppins, sans-serif" }}

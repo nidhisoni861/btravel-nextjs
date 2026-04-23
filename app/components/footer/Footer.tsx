@@ -63,7 +63,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="bg-[var(--champagne)] rounded-2xl p-6 text-white">
+          <div className="bg-[var(--champagne)] p-6 text-white ui-panel">
             <h3 className="font-semibold text-base mb-2">Newsletter abonnieren</h3>
             <p className="text-white/80 text-sm mb-5">Erhalten Sie exklusive Angebote und Reiseinspirationen direkt in Ihr Postfach.</p>
             <input
@@ -71,9 +71,9 @@ export default function Footer() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Ihre E-Mail-Adresse"
-              className="w-full px-4 py-3 rounded-lg bg-white/20 placeholder-white/60 text-white border border-white/30 focus:outline-none focus:border-white mb-3 text-sm"
+              className="w-full px-4 py-3 bg-white/20 placeholder-white/60 text-white border border-white/30 focus:outline-none focus:border-white mb-3 text-sm ui-control"
             />
-            <button className="w-full px-4 py-3 bg-white text-[var(--champagne)] rounded-lg font-semibold text-sm hover:bg-white/90 transition-colors flex items-center justify-center gap-2">
+            <button className="w-full px-4 py-3 bg-white text-[var(--champagne)] font-semibold text-sm hover:bg-white/90 transition-colors flex items-center justify-center gap-2 ui-control">
               <Send className="w-4 h-4" />
               Abonnieren
             </button>

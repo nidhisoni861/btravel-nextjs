@@ -11,7 +11,7 @@ export default function CruiseDetailSidebar({ price, date, duration }: Props) {
 
   return (
     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="lg:col-span-1">
-      <div className="sticky top-32 bg-white border-2 border-[var(--sand)] p-5 sm:p-8">
+      <div className="sticky top-32 bg-white border-2 border-[var(--sand)] p-5 sm:p-8 ui-panel">
         <div className="mb-6">
           <p className="text-sm text-[var(--navy)]/60 mb-2">From</p>
           <p className="font-serif text-4xl text-[var(--navy)] mb-1">€ {price.toLocaleString()}</p>
@@ -23,15 +23,15 @@ export default function CruiseDetailSidebar({ price, date, duration }: Props) {
         </div>
         <div className="space-y-3">
           <button onClick={() => alert('Cruise added to cart!')}
-            className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors">
+            className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors ui-control">
             <ShoppingCart className="w-5 h-5" /><span>Add to Cart</span>
           </button>
           <button onClick={() => setIsFavorite(!isFavorite)}
-            className={`w-full flex items-center justify-center gap-3 px-6 py-4 border-2 transition-colors ${isFavorite ? 'border-red-500 text-red-500 bg-red-50' : 'border-[var(--sand)] text-[var(--navy)] hover:border-[var(--champagne)]'}`}>
+            className={`w-full flex items-center justify-center gap-3 px-6 py-4 border-2 transition-colors ui-control ${isFavorite ? 'border-red-500 text-red-500 bg-red-50' : 'border-[var(--sand)] text-[var(--navy)] hover:border-[var(--champagne)]'}`}>
             <Heart className={`w-5 h-5 ${isFavorite ? 'fill-red-500' : ''}`} />
             <span>{isFavorite ? 'Remove Favorite' : 'Add to Favorites'}</span>
           </button>
-          <Link href="/termin-buchen" className="block w-full px-6 py-4 border-2 border-[var(--sand)] text-center text-[var(--navy)] hover:border-[var(--champagne)] transition-colors">
+          <Link href="/termin-buchen" className="block w-full px-6 py-4 border-2 border-[var(--sand)] text-center text-[var(--navy)] hover:border-[var(--champagne)] transition-colors ui-control">
             Book Consultation
           </Link>
         </div>

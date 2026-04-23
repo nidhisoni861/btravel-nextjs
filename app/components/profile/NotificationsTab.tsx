@@ -12,11 +12,11 @@ const items = [
 
 export default function NotificationsTab({ notifications, setNotifications, onSave }: Props) {
   return (
-    <div className="bg-white border-2 border-[var(--sand)] p-10">
+    <div className="bg-white border-2 border-[var(--sand)] p-10 ui-panel">
       <h2 className="font-serif text-2xl text-[var(--navy)] mb-8">Notification Settings</h2>
       <div className="space-y-6">
         {items.map(({ key, title, desc }) => (
-          <label key={key} className="flex items-start gap-4 p-6 border-2 border-[var(--sand)] hover:border-[var(--champagne)] transition-all cursor-pointer">
+          <label key={key} className="flex items-start gap-4 p-6 border-2 border-[var(--sand)] hover:border-[var(--champagne)] transition-all cursor-pointer ui-card">
             <input
               type="checkbox"
               checked={notifications[key]}
@@ -29,7 +29,7 @@ export default function NotificationsTab({ notifications, setNotifications, onSa
             </div>
           </label>
         ))}
-        <button onClick={onSave} className="flex items-center gap-3 px-8 py-4 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors">
+        <button onClick={onSave} className="flex items-center gap-3 px-8 py-4 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors ui-control">
           <Save className="w-5 h-5" /><span>Save Settings</span>
         </button>
       </div>

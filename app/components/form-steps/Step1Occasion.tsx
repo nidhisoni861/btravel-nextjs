@@ -30,7 +30,7 @@ export default function Step1Occasion({ formData, updateFormData, nextStep }: Pr
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
         {occasions.map((occasion) => (
           <motion.button key={occasion.value} onClick={() => handleSelect(occasion.value)}
-            className={`relative overflow-hidden border-2 transition-all hover:border-[var(--champagne)] hover:shadow-lg group ${formData.occasion === occasion.value ? 'border-[var(--champagne)]' : 'border-[var(--sand)]'}`}
+            className={`relative overflow-hidden border-2 transition-all hover:border-[var(--champagne)] hover:shadow-lg group ui-card ${formData.occasion === occasion.value ? 'border-[var(--champagne)]' : 'border-[var(--sand)]'}`}
             whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <div className="relative h-32 overflow-hidden">
               <img src={occasion.image} alt={occasion.label} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />

@@ -27,7 +27,7 @@ export default function WarenkorbPage() {
           <ShoppingCart className="w-24 h-24 mx-auto mb-6 text-[var(--sand)]" />
           <h2 className="font-serif text-3xl text-[var(--navy)] mb-4">Your cart is empty</h2>
           <p className="text-[var(--navy)]/70 mb-8">Discover our exclusive travel offers</p>
-          <Link href="/kreuzfahrten" className="inline-block px-8 py-4 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors">Explore Cruises</Link>
+          <Link href="/kreuzfahrten" className="inline-block px-8 py-4 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors ui-control">Explore Cruises</Link>
         </motion.div>
       </div>
     );
@@ -47,14 +47,14 @@ export default function WarenkorbPage() {
           <div className="lg:col-span-2 space-y-6">
             {cartItems.map((item, index) => (
               <motion.div key={item.id} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-white border-2 border-[var(--sand)] p-4 sm:p-6 hover:border-[var(--champagne)] transition-all">
-                <img src={item.image} alt={item.title} className="w-full sm:w-48 h-48 sm:h-32 object-cover flex-shrink-0" />
+                className="flex flex-col sm:flex-row gap-4 sm:gap-6 bg-white border-2 border-[var(--sand)] p-4 sm:p-6 hover:border-[var(--champagne)] transition-all ui-card">
+                <img src={item.image} alt={item.title} className="w-full sm:w-48 h-48 sm:h-32 object-cover flex-shrink-0 ui-control" />
                 <div className="flex-1 min-w-0">
                   <h3 className="font-serif text-lg sm:text-xl text-[var(--navy)] mb-2">{item.title}</h3>
                   <p className="text-[var(--navy)]/70 text-sm mb-1">{item.destination}</p>
                   <p className="text-[var(--navy)]/70 text-sm mb-4">{item.duration}</p>
                   <div className="flex items-center justify-between sm:justify-start gap-4">
-                    <div className="flex items-center gap-3 border-2 border-[var(--sand)]">
+                    <div className="flex items-center gap-3 border-2 border-[var(--sand)] ui-control">
                       <button onClick={() => updateQuantity(item.id, -1)} className="p-2 hover:bg-[var(--sand)] transition-colors"><Minus className="w-4 h-4 text-[var(--navy)]" /></button>
                       <span className="text-[var(--navy)] font-medium min-w-[2rem] text-center">{item.quantity}</span>
                       <button onClick={() => updateQuantity(item.id, 1)} className="p-2 hover:bg-[var(--sand)] transition-colors"><Plus className="w-4 h-4 text-[var(--navy)]" /></button>
@@ -76,7 +76,7 @@ export default function WarenkorbPage() {
             ))}
           </div>
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="lg:col-span-1">
-            <div className="bg-[var(--sand-light)] border-2 border-[var(--sand)] p-5 sm:p-8 sticky top-32">
+            <div className="bg-[var(--sand-light)] border-2 border-[var(--sand)] p-5 sm:p-8 sticky top-32 ui-panel">
               <h2 className="font-serif text-2xl text-[var(--navy)] mb-6">Summary</h2>
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between text-[var(--navy)]"><span>Subtotal</span><span>€ {subtotal.toLocaleString()}</span></div>
@@ -85,8 +85,8 @@ export default function WarenkorbPage() {
                   <div className="flex justify-between font-serif text-2xl text-[var(--navy)]"><span>Total</span><span>€ {total.toLocaleString(undefined, { maximumFractionDigits: 2 })}</span></div>
                 </div>
               </div>
-              <Link href="/checkout" className="block w-full py-4 bg-[var(--champagne)] text-white text-center text-lg hover:bg-[var(--champagne)]/90 transition-colors mb-4">Proceed to Checkout</Link>
-              <Link href="/kreuzfahrten" className="block w-full py-4 border-2 border-[var(--sand)] text-[var(--navy)] text-center hover:border-[var(--champagne)] transition-colors">Continue Shopping</Link>
+              <Link href="/checkout" className="block w-full py-4 bg-[var(--champagne)] text-white text-center text-lg hover:bg-[var(--champagne)]/90 transition-colors mb-4 ui-control">Proceed to Checkout</Link>
+              <Link href="/kreuzfahrten" className="block w-full py-4 border-2 border-[var(--sand)] text-[var(--navy)] text-center hover:border-[var(--champagne)] transition-colors ui-control">Continue Shopping</Link>
             </div>
           </motion.div>
         </div>

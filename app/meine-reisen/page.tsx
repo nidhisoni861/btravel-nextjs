@@ -21,7 +21,7 @@ export default function MeineReisenPage() {
           <Heart className="w-24 h-24 mx-auto mb-6 text-[var(--sand)]" />
           <h2 className="font-serif text-3xl text-[var(--navy)] mb-4">No favorites saved yet</h2>
           <p className="text-[var(--navy)]/70 mb-8">Discover our cruises and save your favorites</p>
-          <Link href="/kreuzfahrten" className="inline-block px-8 py-4 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors">Discover Cruises</Link>
+          <Link href="/kreuzfahrten" className="inline-block px-8 py-4 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors ui-control">Discover Cruises</Link>
         </motion.div>
       </div>
     );
@@ -40,7 +40,7 @@ export default function MeineReisenPage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {favorites.map((trip, index) => (
             <motion.div key={trip.id} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative bg-white border-2 border-[var(--sand)] hover:border-[var(--champagne)] transition-all overflow-hidden">
+              className="group relative bg-white border-2 border-[var(--sand)] hover:border-[var(--champagne)] transition-all overflow-hidden ui-panel">
               <div className="relative h-64 overflow-hidden">
                 <img src={trip.image} alt={trip.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 <button onClick={() => removeFavorite(trip.id)} className="absolute top-4 right-4 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
@@ -55,17 +55,17 @@ export default function MeineReisenPage() {
                   <div className="flex items-center gap-2 text-[var(--navy)]/70 text-sm"><Users className="w-4 h-4 text-[var(--champagne)]" /><span>{trip.passengers}</span></div>
                 </div>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {trip.highlights.slice(0, 2).map((h, i) => <span key={i} className="px-2 py-1 bg-[var(--sand-light)] text-[var(--navy)] text-xs">{h}</span>)}
+                  {trip.highlights.slice(0, 2).map((h, i) => <span key={i} className="px-2 py-1 bg-[var(--sand-light)] text-[var(--navy)] text-xs ui-control">{h}</span>)}
                 </div>
                 <div className="border-t-2 border-[var(--sand)] pt-4">
                   <div className="flex items-center justify-between mb-4">
                     <div><p className="text-xs text-[var(--navy)]/60">From</p><p className="font-serif text-2xl text-[var(--navy)]">€ {trip.price.toLocaleString()}</p></div>
                   </div>
                   <div className="flex gap-2">
-                    <button onClick={() => alert('Trip added to cart!')} className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors">
+                    <button onClick={() => alert('Trip added to cart!')} className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors ui-control">
                       <ShoppingCart className="w-4 h-4" /><span className="text-sm">Add to Cart</span>
                     </button>
-                    <button onClick={() => removeFavorite(trip.id)} className="px-4 py-3 border-2 border-[var(--sand)] text-[var(--navy)] hover:border-red-500 hover:text-red-500 transition-colors">
+                    <button onClick={() => removeFavorite(trip.id)} className="px-4 py-3 border-2 border-[var(--sand)] text-[var(--navy)] hover:border-red-500 hover:text-red-500 transition-colors ui-control">
                       <Trash2 className="w-4 h-4" />
                     </button>
                   </div>
@@ -75,7 +75,7 @@ export default function MeineReisenPage() {
           ))}
         </div>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }} className="mt-16 text-center">
-          <Link href="/kreuzfahrten" className="inline-block px-8 py-4 border-2 border-[var(--sand)] text-[var(--navy)] hover:border-[var(--champagne)] transition-colors">Discover More Cruises</Link>
+          <Link href="/kreuzfahrten" className="inline-block px-8 py-4 border-2 border-[var(--sand)] text-[var(--navy)] hover:border-[var(--champagne)] transition-colors ui-control">Discover More Cruises</Link>
         </motion.div>
       </div>
     </div>

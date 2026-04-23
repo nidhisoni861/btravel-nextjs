@@ -29,7 +29,7 @@ export default function BuchungPage() {
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {packages.map((pkg, index) => (
             <motion.div key={pkg.id} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`border-2 transition-all cursor-pointer ${selectedPackage === pkg.id ? 'border-[var(--champagne)] shadow-xl' : 'border-[var(--sand)] hover:border-[var(--champagne)]'}`}
+              className={`border-2 transition-all cursor-pointer ui-panel ${selectedPackage === pkg.id ? 'border-[var(--champagne)] shadow-xl' : 'border-[var(--sand)] hover:border-[var(--champagne)]'}`}
               onClick={() => setSelectedPackage(pkg.id)}>
               <div className="relative overflow-hidden">
                 <img src={pkg.image} alt={pkg.name} className="w-full h-64 object-cover transition-transform duration-500 hover:scale-105" />
@@ -63,7 +63,7 @@ export default function BuchungPage() {
         </div>
         {selectedPackage && !showConfirmation && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}
-            className="bg-[var(--sand-light)] p-8 border-l-4 border-[var(--champagne)]">
+            className="bg-[var(--sand-light)] p-8 border-l-4 border-[var(--champagne)] ui-panel">
             <div className="max-w-[800px] mx-auto">
               <h2 className="font-serif text-2xl text-[var(--navy)] mb-6">Booking Summary</h2>
               <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -79,7 +79,7 @@ export default function BuchungPage() {
                 </div>
               </div>
               <motion.button onClick={() => setShowConfirmation(true)}
-                className="w-full py-4 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors"
+                className="w-full py-4 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors ui-control"
                 whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>
                 Confirm Booking
               </motion.button>
@@ -88,14 +88,14 @@ export default function BuchungPage() {
         )}
         {showConfirmation && (
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}
-            className="max-w-[600px] mx-auto bg-white p-12 shadow-2xl border-2 border-[var(--champagne)] text-center">
+            className="max-w-[600px] mx-auto bg-white p-12 shadow-2xl border-2 border-[var(--champagne)] text-center ui-panel">
             <div className="w-16 h-16 bg-[var(--champagne)] rounded-full flex items-center justify-center mx-auto mb-6">
               <Check className="w-8 h-8 text-[var(--navy)]" />
             </div>
             <h2 className="font-serif text-3xl text-[var(--navy)] mb-4">Booking Received!</h2>
             <p className="text-[var(--navy)]/70 mb-8">Thank you for your trust. Your personal travel advisor will contact you within 24 hours to discuss all details and perfect your dream trip.</p>
             <button onClick={() => router.push('/dashboard')}
-              className="px-8 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors">
+              className="px-8 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors ui-control">
               Go to Dashboard
             </button>
           </motion.div>

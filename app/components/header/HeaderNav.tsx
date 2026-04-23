@@ -20,7 +20,7 @@ export default function HeaderNav({ textColor }: Props) {
         <Link
           key={link.path}
           href={link.path}
-          className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all relative group ${
+          className={`flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all relative group ui-control ${
             pathname === link.path
               ? 'text-[var(--champagne)]'
               : `${textColor} hover:text-[var(--champagne)]`

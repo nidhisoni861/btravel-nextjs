@@ -33,10 +33,10 @@ export default function DokumentePage() {
             const Icon = doc.icon;
             return (
               <motion.div key={doc.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-white border-2 border-[var(--sand)] hover:border-[var(--champagne)] transition-all p-6">
+                className="group bg-white border-2 border-[var(--sand)] hover:border-[var(--champagne)] transition-all p-6 ui-card">
                 <div className="flex items-start gap-4 sm:gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[var(--sand-light)] flex items-center justify-center">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[var(--sand-light)] flex items-center justify-center ui-control">
                       <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-[var(--champagne)]" />
                     </div>
                   </div>
@@ -51,15 +51,15 @@ export default function DokumentePage() {
                           {(doc as typeof doc & { amount?: string }).amount && <span className="font-medium text-[var(--navy)]">{(doc as typeof doc & { amount?: string }).amount}</span>}
                         </div>
                       </div>
-                      <span className={`self-start px-3 py-1 text-sm font-medium whitespace-nowrap ${doc.statusColor} bg-white border-2 border-current`}>{doc.status}</span>
+                      <span className={`self-start px-3 py-1 text-sm font-medium whitespace-nowrap ${doc.statusColor} bg-white border-2 border-current ui-control`}>{doc.status}</span>
                     </div>
                     <div className="flex flex-col xs:flex-row gap-2 sm:gap-3 mt-4">
                       <button onClick={() => alert(`Preparing download: ${doc.type} - ${doc.bookingNumber}`)}
-                        className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors">
+                        className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2 bg-[var(--champagne)] text-white hover:bg-[var(--champagne)]/90 transition-colors ui-control">
                         <Download className="w-4 h-4" /><span>Download PDF</span>
                       </button>
                       <button onClick={() => alert(`${doc.type} sent via email`)}
-                        className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2 border-2 border-[var(--sand)] text-[var(--navy)] hover:border-[var(--champagne)] transition-colors">
+                        className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2 border-2 border-[var(--sand)] text-[var(--navy)] hover:border-[var(--champagne)] transition-colors ui-control">
                         <Mail className="w-4 h-4" /><span>Send via Email</span>
                       </button>
                     </div>
@@ -71,7 +71,7 @@ export default function DokumentePage() {
         </div>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-8 sm:mt-12 bg-[var(--sand-light)] border-2 border-[var(--sand)] p-5 sm:p-8">
+          className="mt-8 sm:mt-12 bg-[var(--sand-light)] border-2 border-[var(--sand)] p-5 sm:p-8 ui-panel">
           <h3 className="font-serif text-xl text-[var(--navy)] mb-4">Important Information</h3>
           <ul className="space-y-2 text-[var(--navy)]/70">
             {infoItems.map((item) => (

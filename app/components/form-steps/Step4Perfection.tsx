@@ -55,8 +55,8 @@ export default function Step4Perfection({ formData, updateFormData, nextStep, pr
         <LuxuryOptionGroup title="Mobility" options={luxuryOptions.mobilitat} formData={formData} onToggle={handleToggle} />
       </div>
       <div className="flex gap-4 mt-8">
-        <button onClick={prevStep} className="px-8 py-3 border-2 border-[var(--navy)] text-[var(--navy)] hover:bg-[var(--navy)] hover:text-white transition-colors">Back</button>
-        <button onClick={nextStep} className="flex-1 px-8 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors">Next</button>
+        <button onClick={prevStep} className="px-8 py-3 border-2 border-[var(--navy)] text-[var(--navy)] hover:bg-[var(--navy)] hover:text-white transition-colors ui-control">Back</button>
+        <button onClick={nextStep} className="flex-1 px-8 py-3 bg-[var(--champagne)] text-[var(--navy)] hover:bg-[var(--champagne)]/90 transition-colors ui-control">Next</button>
       </div>
     </motion.div>
   );
