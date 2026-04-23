@@ -72,20 +72,17 @@ export default function Welcome() {
               <div className="space-y-6">
                 <p
                   className="text-xl sm:text-2xl lg:text-3xl text-white/95 leading-relaxed"
-                  style={{ fontFamily: "Poppins, sans-serif" }}
                 >
                   Diese Seite dreht sich ganz um Sie und Ihre Wünsche.
                 </p>
 
                 <p
                   className="text-base sm:text-lg text-white/80 leading-relaxed"
-                  style={{ fontFamily: "Poppins, sans-serif" }}
                 >
                   Wenn Sie es vorziehen, formell angesprochen zu werden,{" "}
                   <button
                     onClick={() => setIsFormal(!isFormal)}
                     className="text-emerald-300 hover:text-emerald-200 underline underline-offset-4 decoration-emerald-400/50 hover:decoration-emerald-300 transition-all duration-300"
-                    style={{ fontFamily: "Poppins, sans-serif" }}
                   >
                     klicken Sie hier
                   </button>
@@ -104,14 +101,12 @@ export default function Welcome() {
                 <div className="pt-4 space-y-4">
                   <p
                     className="text-2xl sm:text-3xl text-white leading-relaxed"
-                    style={{ fontFamily: "Montserrat, sans-serif" }}
                   >
                     Suchen Sie nach Entspannung, einem Urlaub oder einer Reise?
                   </p>
 
                   <p
                     className="text-base sm:text-lg text-white/90 leading-relaxed"
-                    style={{ fontFamily: "Poppins, sans-serif" }}
                   >
                     Dann sind Sie bereits auf dem richtigen Weg. Wenn Sie uns
                     mehr über Ihre Wünsche erzählen, können wir Ihnen die besten
@@ -126,7 +121,6 @@ export default function Welcome() {
                 className="group relative w-full sm:w-auto overflow-hidden bg-gradient-to-r from-emerald-500 to-teal-500 px-10 py-5 shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 ui-panel"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                style={{ fontFamily: "Poppins, sans-serif" }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <span className="relative text-xl font-semibold text-white tracking-wide flex items-center justify-center gap-3">
@@ -153,7 +147,6 @@ export default function Welcome() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
               className="flex flex-wrap gap-6 items-center justify-center text-white/60 text-sm"
-              style={{ fontFamily: "Poppins, sans-serif" }}
             >
               <span className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-emerald-400" />

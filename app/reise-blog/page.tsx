@@ -36,7 +36,6 @@ export default function TravelBlog() {
           </h1>
           <p
             className="mt-4 text-white/90 text-lg sm:text-xl"
-            style={{ fontFamily: 'Poppins, sans-serif' }}
           >
             Inspiration für Ihre nächste Luxusreise
           </p>
@@ -55,7 +54,6 @@ export default function TravelBlog() {
               whileHover={{ y: -4 }}
               onClick={() => setSelectedPost(post)}
               className="group cursor-pointer overflow-hidden rounded-[30px] bg-white shadow-[0_10px_30px_rgba(15,23,42,0.08)] border border-slate-100 transition-all duration-300 hover:shadow-[0_18px_45px_rgba(15,23,42,0.12)]"
-              style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               <div className="relative overflow-hidden">
                 <img
@@ -80,7 +78,6 @@ export default function TravelBlog() {
 
                 <h2
                   className="mb-4 text-[28px] leading-[1.25] font-semibold text-[var(--navy)] transition-colors duration-300 group-hover:text-sky-500"
-                  style={{ fontFamily: 'Poppins, sans-serif' }}
                 >
                   {post.title}
                 </h2>

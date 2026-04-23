@@ -6,8 +6,9 @@
 
 :root {
   --font-size: 16px;
-  --font-serif: 'Poppins', sans-serif;
-  --font-sans: 'Poppins', sans-serif;
+  --font-body: "Poppins", sans-serif;
+  --font-serif: "Poppins", sans-serif;
+  --font-sans: var(--font-body);
 
   --navy: #0f1729;
   --champagne: #34bce1;
@@ -78,6 +79,10 @@
     font-family: var(--font-sans);
     overflow-x: hidden;
     width: 100%;
+  }
+
+  p, label, button, input, textarea, select, a, li, small {
+    font-family: inherit;
   }
 
   h1 { font-family: var(--font-serif); font-size: var(--text-2xl); font-weight: var(--font-weight-medium); line-height: 1.5; }
