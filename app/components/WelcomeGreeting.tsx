@@ -24,16 +24,18 @@ function PeriodIcon({ period }: { period: Period }) {
   return                           <Moon     className={cls} />;
 }
 
-export default function WelcomeGreeting({ name = 'Nidhi' }: { name?: string }) {
+interface WelcomeGreetingProps {
+  name?: string;
+  /** Offsets all internal animation delays — set to ~2s so reveals fire after the outer enter-animation settles */
+  delay?: number;
+}
+
+export default function WelcomeGreeting({ name = 'Nidhi', delay = 0 }: WelcomeGreetingProps) {
   const { period, greeting, tagline } = getTimeData();
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -28 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-      className="space-y-4"
-    >
+    // Plain div — outer enter animation is controlled by page.tsx
+    <div className="space-y-4">
       {/* Greeting line + floating icon */}
       <div className="flex items-start justify-between gap-4">
         <h1 className="text-5xl sm:text-6xl lg:text-7xl text-white tracking-tight leading-[1.1] font-medium">
@@ -41,7 +43,7 @@ export default function WelcomeGreeting({ name = 'Nidhi' }: { name?: string }) {
           <motion.span
             initial={{ opacity: 0, x: -14 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, delay: delay + 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-teal-200"
           >
             {name}
@@ -52,7 +54,7 @@ export default function WelcomeGreeting({ name = 'Nidhi' }: { name?: string }) {
         <motion.div
           initial={{ opacity: 0, scale: 0.3 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.5, type: 'spring', stiffness: 240, damping: 18 }}
+          transition={{ duration: 0.5, delay: delay + 0.35, type: 'spring', stiffness: 240, damping: 18 }}
           className="mt-2 shrink-0"
         >
           <motion.div
@@ -69,7 +71,7 @@ export default function WelcomeGreeting({ name = 'Nidhi' }: { name?: string }) {
       <motion.div
         initial={{ scaleX: 0, opacity: 0 }}
         animate={{ scaleX: 1, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.9, delay: delay + 0.25, ease: [0.22, 1, 0.36, 1] }}
         style={{ transformOrigin: 'left' }}
         className="h-px w-28 bg-gradient-to-r from-emerald-400 via-teal-300 to-transparent"
       />
@@ -78,11 +80,11 @@ export default function WelcomeGreeting({ name = 'Nidhi' }: { name?: string }) {
       <motion.p
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
+        transition={{ duration: 0.8, delay: delay + 0.45 }}
         className="text-base sm:text-lg text-white/55 font-light tracking-wide"
       >
         {tagline}
       </motion.p>
-    </motion.div>
+    </div>
   );
 }
