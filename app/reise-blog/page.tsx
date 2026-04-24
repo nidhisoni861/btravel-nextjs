@@ -30,7 +30,7 @@ export default function TravelBlog() {
         <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
           <h1
             className="text-white text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            style={{ fontFamily: 'Poppins, sans-serif' }}
           >
             Reise Blog
           </h1>

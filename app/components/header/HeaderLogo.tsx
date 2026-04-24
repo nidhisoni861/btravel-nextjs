@@ -1,10 +1,16 @@
 'use client';
 import Link from 'next/link';
 
-export default function HeaderLogo() {
+type Props = { transparent?: boolean };
+
+export default function HeaderLogo({ transparent = false }: Props) {
   return (
     <Link href="/" className="group flex-shrink-0">
-      <svg className="h-10 w-auto transition-transform group-hover:scale-105" viewBox="0 0 624.84 234.15" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        className={`h-10 w-auto transition-all group-hover:scale-105 ${transparent ? 'brightness-0 invert' : ''}`}
+        viewBox="0 0 624.84 234.15"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <defs>
           <linearGradient id="lg1-header" x1="0" y1="132.58" x2="170.34" y2="132.58">
             <stop offset="0" stopColor="#34a936" />

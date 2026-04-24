@@ -2,13 +2,42 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'motion/react';
-import { Search, Anchor, BookOpen, CalendarDays, Heart, ShoppingCart, User, FileText, Settings, LogOut, HelpCircle, Phone, Mail } from 'lucide-react';
+import { X, ChevronDown, BookOpen, Heart, Search, User } from 'lucide-react';
+import HeaderLogo from './HeaderLogo';
+
+const InstagramIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+  </svg>
+);
+
+const FacebookIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+  </svg>
+);
+
+const LinkedinIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </svg>
+);
+
+const YoutubeIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+  </svg>
+);
+
+const WhatsAppIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+);
 
 const navLinks = [
-  { path: '/reisen-finden', label: 'Reise finden', icon: Search },
-  { path: '/kreuzfahrten', label: 'Kreuzfahrten', icon: Anchor },
-  { path: '/reise-blog', label: 'Reise Blog', icon: BookOpen },
-  { path: '/termin-buchen', label: 'Termin buchen', icon: CalendarDays },
+  { path: '/reisen-finden', label: 'Reise finden' },
+  { path: '/kreuzfahrten', label: 'Kreuzfahrten' },
 ];
 
 type Props = {
@@ -21,88 +50,193 @@ type Props = {
 
 export default function MobileMenu({ isLoggedIn, user, onClose, onLogout, onLogin }: Props) {
   const pathname = usePathname();
+
   return (
-    <motion.div
-      initial={{ opacity: 0, x: '100%' }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: '100%' }}
-      transition={{ duration: 0.3, ease: 'easeInOut' }}
-      className="fixed inset-0 z-40 lg:hidden bg-white pt-20 overflow-y-auto"
-    >
-      <div className="px-6 py-6">
-        <nav className="flex flex-col gap-2 mb-8">
-          {navLinks.map((link) => (
-            <Link key={link.path} href={link.path} onClick={onClose}
-              className={`flex items-center gap-3 px-4 py-3 text-base font-medium transition-colors ui-control ${pathname === link.path ? 'bg-[var(--champagne)]/10 text-[var(--champagne)]' : 'text-[var(--navy)] hover:bg-[var(--sand-light)]'}`}>
-              <link.icon className="w-5 h-5" />
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-        {isLoggedIn && (
-          <>
-            <div className="mb-8 pb-8 border-b border-[var(--sand)]">
-              <h3 className="text-xs font-semibold text-[var(--navy)]/60 uppercase tracking-wider mb-3 px-4">Schnellzugriff</h3>
-              <div className="flex flex-col gap-2">
-                <Link href="/meine-reisen" onClick={onClose} className="flex items-center gap-3 px-4 py-3 text-[var(--navy)] hover:bg-[var(--sand-light)] transition-colors ui-control">
-                  <Heart className="w-5 h-5 text-[var(--champagne)]" /><span className="text-sm font-medium">Meine Reisen</span>
-                </Link>
-                <Link href="/warenkorb" onClick={onClose} className="flex items-center gap-3 px-4 py-3 text-[var(--navy)] hover:bg-[var(--sand-light)] transition-colors ui-control">
-                  <ShoppingCart className="w-5 h-5 text-[var(--champagne)]" /><span className="text-sm font-medium">Warenkorb</span>
-                </Link>
-              </div>
-            </div>
-            <div className="mb-8">
-              <div className="flex items-center gap-4 px-4 py-4 bg-gradient-to-r from-[var(--champagne)]/10 to-transparent mb-4 ui-card">
-                <div className="w-12 h-12 rounded-full border-2 border-[var(--champagne)] overflow-hidden flex-shrink-0">
-                  <img src={user.avatar} alt={user.firstName} className="w-full h-full object-cover" />
-                </div>
-                <div>
-                  <p className="text-xs text-[var(--navy)]/60">Angemeldet als</p>
-                  <p className="font-semibold text-[var(--navy)]">{user.firstName} {user.lastName}</p>
-                </div>
-              </div>
-              <div className="flex flex-col gap-2">
-                {[{ href: '/profil', icon: User, label: 'Mein Profil' }, { href: '/dokumente', icon: FileText, label: 'Dokumente' }, { href: '/profil', icon: Settings, label: 'Einstellungen' }].map(({ href, icon: Icon, label }) => (
-                  <Link key={label} href={href} onClick={onClose} className="flex items-center gap-3 px-4 py-3 text-[var(--navy)] hover:bg-[var(--sand-light)] transition-colors ui-control">
-                    <Icon className="w-5 h-5 text-[var(--champagne)]" /><span className="text-sm font-medium">{label}</span>
-                  </Link>
-                ))}
-                <button onClick={() => { onLogout(); onClose(); }} className="flex items-center gap-3 px-4 py-3 text-red-600 hover:bg-red-50 transition-colors ui-control">
-                  <LogOut className="w-5 h-5" /><span className="text-sm font-medium">Abmelden</span>
-                </button>
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-[var(--champagne)]/5 to-transparent p-6 border border-[var(--sand)] ui-card">
-              <div className="flex items-start gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-[var(--champagne)]/10 flex items-center justify-center flex-shrink-0">
-                  <HelpCircle className="w-5 h-5 text-[var(--champagne)]" />
-                </div>
-                <div>
-                  <h3 className="font-serif text-lg text-[var(--navy)] mb-1">Hilfe & Kontakt</h3>
-                  <p className="text-sm text-[var(--navy)]/60">Täglich von 9 bis 22 Uhr für Sie da</p>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <a href="tel:+497111234567" className="flex items-center gap-3 px-4 py-3 bg-white hover:bg-[var(--champagne)]/5 transition-colors border border-[var(--sand)] ui-control">
-                  <Phone className="w-5 h-5 text-[var(--champagne)]" />
-                  <div><p className="text-xs text-[var(--navy)]/60">Telefon</p><p className="text-sm font-semibold text-[var(--navy)]">+49 711 123 456 7</p></div>
-                </a>
-                <a href="mailto:info@betravel.de" className="flex items-center gap-3 px-4 py-3 bg-white hover:bg-[var(--champagne)]/5 transition-colors border border-[var(--sand)] ui-control">
-                  <Mail className="w-5 h-5 text-[var(--champagne)]" />
-                  <div><p className="text-xs text-[var(--navy)]/60">E-Mail</p><p className="text-sm font-semibold text-[var(--navy)]">info@betravel.de</p></div>
-                </a>
-              </div>
-            </div>
-          </>
-        )}
-        {!isLoggedIn && (
-          <div className="flex flex-col gap-3">
-            <Link href="/registrierung" onClick={onClose} className="w-full py-3 border-2 border-[var(--sand)] text-[var(--navy)] text-center font-medium hover:border-[var(--champagne)] transition-colors ui-control">Registrieren</Link>
-            <button onClick={() => { onLogin(); onClose(); }} className="w-full py-3 bg-[var(--champagne)] text-white font-semibold hover:bg-[var(--champagne)]/90 transition-colors ui-control">Anmelden</button>
+    <>
+      {/* Backdrop */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={onClose}
+        className="fixed inset-0 bg-black/50 z-[60]"
+      />
+
+      {/* Panel */}
+      <motion.div
+        initial={{ x: '-100%' }}
+        animate={{ x: 0 }}
+        exit={{ x: '-100%' }}
+        transition={{ type: 'tween', duration: 0.3 }}
+        className="fixed left-0 top-0 bottom-0 w-full max-w-md bg-white z-[70] overflow-y-auto"
+      >
+        <div className="p-6">
+          {/* Top row: close button + language selector */}
+          <div className="flex items-center justify-between mb-8">
+            <button
+              onClick={onClose}
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+              aria-label="Menü schließen"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <button className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-[var(--navy)] hover:border-[var(--champagne)] transition-colors">
+              DE
+              <ChevronDown className="w-4 h-4" />
+            </button>
           </div>
-        )}
-      </div>
-    </motion.div>
+
+          {/* Logo */}
+          <div className="flex justify-center mb-8" onClick={onClose}>
+            <HeaderLogo />
+          </div>
+
+          {/* Login / User */}
+          <div className="flex justify-end mb-8">
+            {isLoggedIn ? (
+              <button
+                onClick={() => { onLogout(); onClose(); }}
+                className="flex items-center gap-2 text-sm font-medium text-[var(--navy)] hover:text-[var(--champagne)] transition-colors"
+              >
+                <User className="w-5 h-5" />
+                {user.firstName}
+              </button>
+            ) : (
+              <button
+                onClick={() => { onLogin(); onClose(); }}
+                className="flex items-center gap-2 text-sm font-medium text-[var(--navy)] hover:text-[var(--champagne)] transition-colors"
+              >
+                <User className="w-5 h-5" />
+                Anmelden
+              </button>
+            )}
+          </div>
+
+          {/* Main Nav Items */}
+          <nav className="space-y-1 mb-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                onClick={onClose}
+                className={`flex items-center justify-between py-4 font-medium border-b border-gray-200 transition-colors ${
+                  pathname === link.path
+                    ? 'text-[var(--champagne)]'
+                    : 'text-[var(--navy)] hover:text-[var(--champagne)]'
+                }`}
+              >
+                {link.label}
+                <ChevronDown className="w-4 h-4 flex-shrink-0" />
+              </Link>
+            ))}
+            <Link
+              href="/reise-blog"
+              onClick={onClose}
+              className="flex items-center justify-between py-4 font-medium border-b border-gray-200 text-[var(--navy)] hover:text-[var(--champagne)] transition-colors"
+            >
+              Reise Blog
+              <ChevronDown className="w-4 h-4 flex-shrink-0" />
+            </Link>
+            <Link
+              href="/termin-buchen"
+              onClick={onClose}
+              className="flex items-center justify-between py-4 font-medium border-b border-gray-200 text-[var(--navy)] hover:text-[var(--champagne)] transition-colors"
+            >
+              Termin buchen
+              <ChevronDown className="w-4 h-4 flex-shrink-0" />
+            </Link>
+          </nav>
+
+          {/* Action Buttons */}
+          <div className="grid grid-cols-2 gap-4 mb-6">
+            <Link
+              href="/reise-blog"
+              onClick={onClose}
+              className="py-3 px-4 border-2 border-[var(--champagne)] text-[var(--champagne)] rounded-lg font-medium hover:bg-[var(--champagne)] hover:text-white transition-all flex items-center justify-center gap-2"
+            >
+              <BookOpen className="w-5 h-5" />
+              Inspiration
+            </Link>
+            <Link
+              href="/meine-reisen"
+              onClick={onClose}
+              className="py-3 px-4 border-2 border-[var(--champagne)] text-[var(--champagne)] rounded-lg font-medium hover:bg-[var(--champagne)] hover:text-white transition-all flex items-center justify-center gap-2"
+            >
+              <Heart className="w-5 h-5" />
+              Wunschliste
+            </Link>
+          </div>
+
+          {/* Search */}
+          <div className="mb-6">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+              <input
+                type="text"
+                placeholder="Suchen..."
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--champagne)] focus:border-transparent text-sm"
+              />
+            </div>
+          </div>
+
+          {/* Community Button */}
+          <Link
+            href="/registrierung"
+            onClick={onClose}
+            className="block w-full py-3 bg-[var(--champagne)] text-white text-center rounded-lg font-medium hover:bg-[#2ca4c9] transition-colors mb-8"
+          >
+            zur Community
+          </Link>
+
+          {/* Contact Center */}
+          <div className="border-t border-gray-200 pt-6 mb-6">
+            <h3 className="text-center font-semibold text-[var(--navy)] mb-4">Kontaktcenter</h3>
+            <a
+              href="tel:+491607968635"
+              className="block text-center text-2xl font-bold text-[var(--navy)] mb-2 hover:text-[var(--champagne)] transition-colors"
+            >
+              +49 160 796 86 35
+            </a>
+            <p className="text-center text-sm text-gray-600 mb-1">Mo – Fr 09:00 – 17:00</p>
+            <p className="text-center text-sm text-gray-600 mb-4">Sa 09:00 – 14:00</p>
+            <a
+              href="mailto:info@betravel.de"
+              className="block text-center text-sm text-[var(--champagne)] hover:underline"
+            >
+              info@betravel.de
+            </a>
+          </div>
+
+          {/* Tagline */}
+          <div className="border-t border-gray-200 pt-6 mb-6">
+            <p className="text-center text-sm text-gray-600 leading-relaxed">
+              Ihr Reiseexperte für außergewöhnliche Luxusreisen und unvergessliche Erlebnisse weltweit.
+            </p>
+          </div>
+
+          {/* Social Icons */}
+          <div className="flex justify-center gap-3">
+            {[
+              { href: 'https://instagram.com', Icon: InstagramIcon, label: 'Instagram' },
+              { href: 'https://facebook.com', Icon: FacebookIcon, label: 'Facebook' },
+              { href: 'https://linkedin.com', Icon: LinkedinIcon, label: 'LinkedIn' },
+              { href: 'https://youtube.com', Icon: YoutubeIcon, label: 'YouTube' },
+              { href: 'https://wa.me/491607968635', Icon: WhatsAppIcon, label: 'WhatsApp' },
+            ].map(({ href, Icon, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="w-10 h-10 rounded-full bg-[var(--champagne)] text-white flex items-center justify-center hover:bg-[#2ca4c9] transition-all"
+              >
+                <Icon />
+              </a>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </>
   );
 }
