@@ -13,8 +13,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8">
 
           {/* Logo, tagline & social icons */}
           <div className="lg:col-span-3">
@@ -23,17 +23,16 @@ export default function Footer() {
 
           {/* Schnellzugriff */}
           <div className="lg:col-span-2">
-            <h3 className="font-semibold text-gray-900 mb-4 text-[13px] uppercase tracking-wide">
+            <h3 className="font-semibold text-gray-900 mb-4 text-[13px]">
               Schnellzugriff
             </h3>
             <ul className="space-y-2.5">
               {[
                 { href: '/reisen-finden', label: 'Reise finden' },
                 { href: '/kreuzfahrten', label: 'Kreuzfahrten' },
-                { href: '/reise-blog', label: 'Reise Blog' },
-                { href: '/termin-buchen', label: 'Termin buchen' },
+                { href: '#', label: 'Schiffe Live' },
               ].map(({ href, label }) => (
-                <li key={href}>
+                <li key={label}>
                   <Link href={href} className="text-gray-700 hover:text-[var(--champagne)] transition-colors text-[13px]">
                     {label}
                   </Link>
@@ -44,13 +43,12 @@ export default function Footer() {
 
           {/* Service */}
           <div className="lg:col-span-2">
-            <h3 className="font-semibold text-gray-900 mb-4 text-[13px] uppercase tracking-wide">
+            <h3 className="font-semibold text-gray-900 mb-4 text-[13px]">
               Service
             </h3>
             <ul className="space-y-2.5">
               {[
                 { href: '/profil', label: 'Mein Profil' },
-                { href: '/meine-reisen', label: 'Meine Reisen' },
                 { href: '/warenkorb', label: 'Wunschliste' },
                 { href: '/dokumente', label: 'Dokumente' },
               ].map(({ href, label }) => (
@@ -63,11 +61,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Kontakt */}
+          {/* Contact — no heading, matches reference */}
           <div className="lg:col-span-2">
-            <h3 className="font-semibold text-gray-900 mb-4 text-[13px] uppercase tracking-wide">
-              Kontakt
-            </h3>
             <div className="text-gray-700 text-[13px] space-y-1">
               <p>Wangener Weg 25</p>
               <p>73760 Ostfildern</p>
@@ -86,7 +81,7 @@ export default function Footer() {
 
           {/* Zur Community card + payment icons */}
           <div className="lg:col-span-3">
-            <div className="bg-[var(--champagne)] rounded-lg p-5 max-w-[280px]">
+            <div className="bg-[var(--champagne)] rounded-lg p-5">
               <h4 className="font-semibold text-white mb-1 text-sm">Zur Community</h4>
               <p className="text-white/90 text-xs mb-3.5">
                 Bleib immer up to date und erhalte exklusive Einblicke
@@ -133,7 +128,7 @@ export default function Footer() {
 
       {/* Blue bottom bar */}
       <div className="bg-[var(--champagne)] py-4">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 text-white">
             <div className="flex gap-4 text-[12px] flex-wrap justify-center md:justify-start">
               {['Mediadaten', 'Datenschutzerklärung', 'Impressum', 'AGB'].map((label, i) => (

@@ -152,18 +152,18 @@ export default function MobileMenu({ isLoggedIn, user, onClose, onLogout, onLogi
             <Link
               href="/reise-blog"
               onClick={onClose}
-              className="py-3 px-4 border-2 border-[var(--champagne)] text-[var(--champagne)] rounded-lg font-medium hover:bg-[var(--champagne)] hover:text-white transition-all flex items-center justify-center gap-2"
+              className="py-4 px-4 border-2 border-[var(--champagne)] text-[var(--champagne)] rounded-lg font-medium hover:bg-[var(--champagne)] hover:text-white transition-all flex flex-col items-center justify-center gap-1.5"
             >
               <BookOpen className="w-5 h-5" />
-              Inspiration
+              <span className="text-sm">Inspiration</span>
             </Link>
             <Link
               href="/meine-reisen"
               onClick={onClose}
-              className="py-3 px-4 border-2 border-[var(--champagne)] text-[var(--champagne)] rounded-lg font-medium hover:bg-[var(--champagne)] hover:text-white transition-all flex items-center justify-center gap-2"
+              className="py-4 px-4 border-2 border-[var(--champagne)] text-[var(--champagne)] rounded-lg font-medium hover:bg-[var(--champagne)] hover:text-white transition-all flex flex-col items-center justify-center gap-1.5"
             >
               <Heart className="w-5 h-5" />
-              Wunschliste
+              <span className="text-sm">Wunschliste</span>
             </Link>
           </div>
 

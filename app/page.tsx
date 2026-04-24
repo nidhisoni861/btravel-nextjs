@@ -87,7 +87,7 @@ export default function Welcome() {
             className="space-y-8 bg-white/10 backdrop-blur-md p-8 sm:p-10 lg:p-12 border border-white/20 shadow-2xl ui-panel"
           >
             <div className="space-y-6">
-              <p className="text-xl sm:text-2xl lg:text-3xl text-white/95 leading-relaxed">
+              <p className="text-xl sm:text-2xl lg:text-3xl text-white/95 leading-relaxed font-medium">
                 Diese Seite dreht sich ganz um Sie und Ihre Wünsche.
               </p>
 
@@ -95,7 +95,7 @@ export default function Welcome() {
                 Wenn Sie es vorziehen, formell angesprochen zu werden,{" "}
                 <button
                   onClick={() => setIsFormal(!isFormal)}
-                  className="text-emerald-300 hover:text-emerald-200 underline underline-offset-4 decoration-emerald-400/50 hover:decoration-emerald-300 transition-all duration-300"
+                  className="text-[#34bce1] hover:text-white underline underline-offset-4 transition-all duration-300"
                 >
                   klicken Sie hier
                 </button>
@@ -104,45 +104,36 @@ export default function Welcome() {
                   <motion.span
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="ml-2 text-emerald-300"
+                    className="ml-2 text-[#34bce1]"
                   >
                     ✓ Sie werden jetzt formell angesprochen
                   </motion.span>
                 )}
               </p>
 
-              <div className="pt-4 space-y-4">
+              <div className="pt-4 space-y-5">
                 <p className="text-2xl sm:text-3xl text-white leading-relaxed">
                   Suchen Sie nach Entspannung, einem Urlaub oder einer Reise?
                 </p>
 
-                <p className="text-base sm:text-lg text-white/90 leading-relaxed">
-                  Dann sind Sie bereits auf dem richtigen Weg. Wenn Sie uns mehr
-                  über Ihre Wünsche erzählen, können wir Ihnen die besten
-                  Vorschläge machen, die wir haben.
-                </p>
+                {/* Description LEFT + Button RIGHT */}
+                <div className="flex flex-col sm:flex-row sm:items-end gap-6">
+                  <p className="text-base sm:text-lg text-white/90 leading-relaxed flex-1">
+                    Dann sind Sie bereits auf dem richtigen Weg. Wenn Sie uns mehr
+                    über Ihre Wünsche erzählen, können wir Ihnen die besten
+                    Vorschläge machen, die wir haben.
+                  </p>
+                  <motion.button
+                    onClick={() => router.push("/reisen-finden")}
+                    className="flex-shrink-0 px-8 py-3 bg-[#34bce1] hover:bg-[#2ca4c9] text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-[#34bce1]/40 text-base"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Reisen finden →
+                  </motion.button>
+                </div>
               </div>
             </div>
-
-            {/* CTA */}
-            <motion.button
-              onClick={() => router.push("/reisen-finden")}
-              className="group relative w-full sm:w-auto overflow-hidden bg-gradient-to-r from-emerald-500 to-teal-500 px-10 py-5 shadow-2xl hover:shadow-emerald-500/50 transition-all duration-500 ui-panel"
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <span className="relative text-xl font-semibold text-white tracking-wide flex items-center justify-center gap-3">
-                Reisen finden
-                <motion.span
-                  className="inline-block"
-                  animate={{ x: 5 }}
-                  transition={{ repeat: Infinity, repeatType: "reverse", duration: 0.75, ease: "easeInOut" }}
-                >
-                  →
-                </motion.span>
-              </span>
-            </motion.button>
           </motion.div>
 
           {/* ── STEP 6: Bottom badges fade in last ── */}
@@ -153,15 +144,15 @@ export default function Welcome() {
             className="flex flex-wrap gap-6 items-center justify-center text-white/60 text-sm"
           >
             <span className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-emerald-400" />
+              <div className="w-2 h-2 rounded-full bg-[#34bce1]" />
               Maßgeschneiderte Reisen
             </span>
             <span className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-teal-400" />
+              <div className="w-2 h-2 rounded-full bg-[#34bce1]" />
               Persönliche Beratung
             </span>
             <span className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-cyan-400" />
+              <div className="w-2 h-2 rounded-full bg-[#34bce1]" />
               Unvergessliche Erlebnisse
             </span>
           </motion.div>

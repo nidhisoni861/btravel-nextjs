@@ -18,7 +18,7 @@ function getTimeData(): TimeData {
 }
 
 function PeriodIcon({ period }: { period: Period }) {
-  const cls = 'w-5 h-5 text-emerald-300';
+  const cls = 'w-5 h-5 text-[#34bce1]';
   if (period === 'morning') return <Sun      className={cls} />;
   if (period === 'day')     return <Sparkles className={cls} />;
   return                           <Moon     className={cls} />;
@@ -43,7 +43,7 @@ export default function WelcomeGreeting({ name = 'Nidhi', delay = 0 }: WelcomeGr
           initial={{ opacity: 0, x: -14 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: delay + 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-teal-200"
+          className="text-[#34bce1]"
         >
           {name}
         </motion.span>
@@ -72,7 +72,7 @@ export default function WelcomeGreeting({ name = 'Nidhi', delay = 0 }: WelcomeGr
         animate={{ scaleX: 1, opacity: 1 }}
         transition={{ duration: 0.9, delay: delay + 0.25, ease: [0.22, 1, 0.36, 1] }}
         style={{ transformOrigin: 'left' }}
-        className="h-px w-28 bg-gradient-to-r from-emerald-400 via-teal-300 to-transparent"
+        className="h-px w-28 bg-gradient-to-r from-[#34bce1] via-[#34bce1]/60 to-transparent"
       />
 
       {/* Welcoming tagline */}
