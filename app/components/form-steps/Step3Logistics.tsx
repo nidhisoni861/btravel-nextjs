@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { ChevronDown, User } from 'lucide-react';
+import { ChevronDown, ChevronLeft, ChevronRight, User, Calendar } from 'lucide-react';
 import { format, addDays } from 'date-fns';
 import { de } from 'date-fns/locale';
 import { DayPicker } from 'react-day-picker';
@@ -42,6 +42,7 @@ export default function Step3Logistics({ formData, updateFormData, nextStep, pre
   const [customDays, setCustomDays] = useState('');
   const [stayDuration, setStayDuration] = useState('');
   const [selectedMonths, setSelectedMonths] = useState<string[]>([]);
+  const [monthPage, setMonthPage] = useState(0);
   const [destination, setDestination] = useState('');
 
   const adults = formData.adults ?? 2;
@@ -90,7 +91,8 @@ export default function Step3Logistics({ formData, updateFormData, nextStep, pre
       prev.includes(key) ? prev.filter((m) => m !== key) : [...prev, key]
     );
 
-  const upcomingMonths = Array.from({ length: 6 }, (_, i) => {
+  const MONTHS_PER_PAGE = 6;
+  const allMonths = Array.from({ length: 24 }, (_, i) => {
     const d = new Date(2026, 3 + i);
     return {
       key: `${d.getFullYear()}-${d.getMonth()}`,
@@ -98,6 +100,8 @@ export default function Step3Logistics({ formData, updateFormData, nextStep, pre
       year: d.getFullYear(),
     };
   });
+  const maxMonthPage = Math.ceil(allMonths.length / MONTHS_PER_PAGE) - 1;
+  const visibleMonths = allMonths.slice(monthPage * MONTHS_PER_PAGE, (monthPage + 1) * MONTHS_PER_PAGE);
 
   const dateLabel =
     formData.dateRange.from && formData.dateRange.to
@@ -186,7 +190,7 @@ export default function Step3Logistics({ formData, updateFormData, nextStep, pre
                   className="w-10 text-xs text-[var(--navy)] text-center focus:outline-none bg-transparent"
                   placeholder="—"
                 />
-                <span className="text-xs text-[var(--navy)]/60">Tage</span>
+                <span className="text-xs text-[var(--navy)]/60">{customDays === '1' ? 'Tag' : 'Tage'}</span>
               </div>
             </div>
           </div>
@@ -251,21 +255,38 @@ export default function Step3Logistics({ formData, updateFormData, nextStep, pre
                 <p className="text-sm font-medium text-[var(--navy)] mb-3">
                   Wann möchten Sie reisen?
                 </p>
-                <div className="flex gap-2 overflow-x-auto pb-1">
-                  {upcomingMonths.map((m) => (
-                    <button
-                      key={m.key}
-                      onClick={() => toggleMonth(m.key)}
-                      className={`flex-shrink-0 flex flex-col items-center px-3 py-2 border text-xs transition-all ui-control min-w-[52px] ${
-                        selectedMonths.includes(m.key)
-                          ? 'border-[var(--champagne)] bg-[var(--champagne)] text-[var(--navy)]'
-                          : 'border-[var(--sand)] text-[var(--navy)] hover:border-[var(--champagne)]'
-                      }`}
-                    >
-                      <span className="font-medium">{m.label}</span>
-                      <span className="opacity-60 text-[10px]">{m.year}</span>
-                    </button>
-                  ))}
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setMonthPage((p) => Math.max(0, p - 1))}
+                    disabled={monthPage === 0}
+                    className="w-7 h-7 flex-shrink-0 border border-[var(--sand)] flex items-center justify-center text-[var(--navy)] hover:border-[var(--champagne)] disabled:opacity-30 disabled:cursor-not-allowed transition-all ui-control"
+                  >
+                    <ChevronLeft className="w-3.5 h-3.5" />
+                  </button>
+                  <div className="flex-1 grid grid-cols-6 gap-1.5">
+                    {visibleMonths.map((m) => (
+                      <button
+                        key={m.key}
+                        onClick={() => toggleMonth(m.key)}
+                        className={`flex flex-col items-center gap-0.5 py-2 px-1 border text-xs transition-all ui-control ${
+                          selectedMonths.includes(m.key)
+                            ? 'border-[var(--champagne)] bg-[var(--champagne)] text-[var(--navy)]'
+                            : 'border-[var(--sand)] text-[var(--navy)] hover:border-[var(--champagne)]'
+                        }`}
+                      >
+                        <Calendar className="w-3.5 h-3.5 opacity-50 flex-shrink-0" />
+                        <span className="font-semibold text-[11px] leading-tight">{m.label}</span>
+                        <span className="opacity-50 text-[9px] leading-tight">{m.year}</span>
+                      </button>
+                    ))}
+                  </div>
+                  <button
+                    onClick={() => setMonthPage((p) => Math.min(maxMonthPage, p + 1))}
+                    disabled={monthPage === maxMonthPage}
+                    className="w-7 h-7 flex-shrink-0 border border-[var(--sand)] flex items-center justify-center text-[var(--navy)] hover:border-[var(--champagne)] disabled:opacity-30 disabled:cursor-not-allowed transition-all ui-control"
+                  >
+                    <ChevronRight className="w-3.5 h-3.5" />
+                  </button>
                 </div>
               </div>
             </motion.div>

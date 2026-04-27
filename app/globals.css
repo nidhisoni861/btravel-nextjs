@@ -201,13 +201,20 @@
     margin: 0 auto;
   }
   .rdp-day_button:hover { background-color: var(--sand); border-color: var(--sand); }
+  /* Start/end circles: turquoise */
   .rdp-selected .rdp-day_button {
     background-color: var(--champagne);
-    color: var(--navy);
+    color: white;
     border-color: var(--champagne);
   }
-  .rdp-range_middle { background-color: var(--sand-light); }
-  .rdp-range_middle .rdp-day_button { border-radius: 0; }
+  /* Range middle: light blue row, no individual circle */
+  .rdp-range_middle { background-color: #E6FAFC; }
+  .rdp-range_middle .rdp-day_button {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    border-radius: 0;
+    color: var(--navy);
+  }
   .rdp-today:not(.rdp-outside) .rdp-day_button { font-weight: 700; color: var(--champagne); }
   .rdp-outside { opacity: 0.25; }
   .rdp-disabled:not(.rdp-selected) { opacity: 0.3; }
