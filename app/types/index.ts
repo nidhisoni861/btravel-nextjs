@@ -4,6 +4,9 @@ export type FormData = {
   dateRange: { from: Date | undefined; to: Date | undefined };
   flexibility: string;
   travelParty: string;
+  adults: number;
+  children: number;
+  childrenAges: string[];
   destination: string;
   luxuryToggles: {
     conciergeService: boolean;

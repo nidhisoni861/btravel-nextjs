@@ -15,6 +15,9 @@ const initialFormData: FormData = {
   dateRange: { from: undefined, to: undefined },
   flexibility: '',
   travelParty: '',
+  adults: 2,
+  children: 0,
+  childrenAges: [],
   destination: '',
   luxuryToggles: {
     conciergeService: false, personalGuide: false, michelinRestaurants: false,
